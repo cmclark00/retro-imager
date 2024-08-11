@@ -89,7 +89,7 @@ ApplicationWindow {
         }
 
         Rectangle {
-            color: "#cd2355"
+            color: "#fcad01"
             implicitWidth: window.width
             implicitHeight: window.height * (1 - 1/4)
 
@@ -116,7 +116,7 @@ ApplicationWindow {
                     Text {
                         id: text0
                         color: "#ffffff"
-                        text: qsTr("Raspberry Pi Device")
+                        text: qsTr("Retro Gaming Handheld Device")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
                         Layout.preferredWidth: 100
@@ -140,7 +140,7 @@ ApplicationWindow {
                             hwlist.forceActiveFocus()
                         }
                         Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
-                        Accessible.description: qsTr("Select this button to choose your target Raspberry Pi")
+                        Accessible.description: qsTr("Select this button to choose your target Retro Gaming Handheld")
                     }
                 }
 
@@ -154,7 +154,7 @@ ApplicationWindow {
                     Text {
                         id: text1
                         color: "#ffffff"
-                        text: qsTr("Operating System")
+                        text: qsTr("Custom Firmware")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
                         font.pixelSize: 12
@@ -165,7 +165,7 @@ ApplicationWindow {
 
                     ImButton {
                         id: osbutton
-                        text: imageWriter.srcFileName() === "" ? qsTr("CHOOSE OS") : imageWriter.srcFileName()
+                        text: imageWriter.srcFileName() === "" ? qsTr("CHOOSE CFW") : imageWriter.srcFileName()
                         spacing: 0
                         padding: 0
                         bottomPadding: 0
@@ -177,7 +177,7 @@ ApplicationWindow {
                             osswipeview.currentItem.forceActiveFocus()
                         }
                         Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
-                        Accessible.description: qsTr("Select this button to change the operating system")
+                        Accessible.description: qsTr("Select this button to change the custom firmware")
                     }
                 }
 
@@ -245,7 +245,7 @@ ApplicationWindow {
                         id: progressBar
                         Layout.fillWidth: true
                         visible: false
-                        Material.background: "#d15d7d"
+                        Material.background: "#fcad01"
                     }
                 }
 
@@ -347,7 +347,7 @@ ApplicationWindow {
                     visible: imageWriter.isEmbeddedMode()
                     implicitWidth: langbar.width
                     implicitHeight: langbar.height
-                    color: "#ffffe3"
+                    color: "#fcad01"
                     radius: 5
 
                     RowLayout {
@@ -442,7 +442,7 @@ ApplicationWindow {
 
         // background of title
         Rectangle {
-            color: "#f5f5f5"
+            color: "#fcad01"
             anchors.right: parent.right
             anchors.top: parent.top
             height: 35
@@ -478,7 +478,7 @@ ApplicationWindow {
             spacing: 10
 
             Text {
-                text: qsTr("Raspberry Pi Device")
+                text: qsTr("Retro Gaming Handheld Device")
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 Layout.fillWidth: true
@@ -544,7 +544,7 @@ ApplicationWindow {
 
         // background of title
         Rectangle {
-            color: "#f5f5f5"
+            color: "#fcad01"
             anchors.right: parent.right
             anchors.top: parent.top
             height: 35
@@ -581,7 +581,7 @@ ApplicationWindow {
             spacing: 10
 
             Text {
-                text: qsTr("Operating System")
+                text: qsTr("Custom Firmware")
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 Layout.fillWidth: true
@@ -819,7 +819,7 @@ ApplicationWindow {
             Rectangle {
                id: bgrect
                anchors.fill: parent
-               color: "#f5f5f5"
+               color: "#fcad01"
                visible: mouseOver && parent.ListView.view.currentIndex !== index
                property bool mouseOver: false
             }
@@ -940,7 +940,7 @@ ApplicationWindow {
 
         // background of title
         Rectangle {
-            color: "#f5f5f5"
+            color: "#fcad01"
             anchors.right: parent.right
             anchors.top: parent.top
             height: 35
@@ -1050,7 +1050,7 @@ ApplicationWindow {
             Rectangle {
                id: dstbgrect
                anchors.fill: parent
-               color: "#f5f5f5"
+               color: "#fcad01"
                visible: mouseOver && parent.ListView.view.currentIndex !== index
                property bool mouseOver: false
 
@@ -1139,7 +1139,7 @@ ApplicationWindow {
         yesButton: true
         noButton: true
         title: qsTr("Are you sure you want to quit?")
-        text: qsTr("Raspberry Pi Imager is still busy.<br>Are you sure you want to quit?")
+        text: qsTr("Retro Imager is still busy.<br>Are you sure you want to quit?")
         onYes: {
             Qt.quit()
         }
@@ -1264,7 +1264,7 @@ ApplicationWindow {
                 return
 
             progressText.text = qsTr("Verifying... %1%").arg(Math.floor(newPos*100))
-            progressBar.Material.accent = "#6cc04a"
+            progressBar.Material.accent = "#fcad01"
             progressBar.value = newPos
         }
     }
@@ -1635,7 +1635,7 @@ ApplicationWindow {
         oslist.currentIndex = -1
         osswipeview.currentIndex = 0
         imageWriter.setSrc("")
-        osbutton.text = qsTr("CHOOSE OS")
+        osbutton.text = qsTr("CHOOSE CFW")
         writebutton.enabled = false
 
         hwbutton.text = hwmodel.name

@@ -1,0 +1,62 @@
+{
+  "os_list": [
+    {
+      "name": "muOS 2405.1 Refried Beans for RG35XX Plus/H/SP/2024",
+      "description": "muOS 2405.1 Refried Beans firmware optimized for Anbernic RG35XX Plus/H/SP/2024.",
+      "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
+      "url": "https://dl.muos.dev/RG35XX-SPLUSH24/muOS-RG35XX-2405.1-REFRIED.zip",
+      "release_date": "2024-06-23",
+      "image_download_size": 1900000000,
+      "extract_size": 4300000000,
+      "extract_sha256": "60b556c123825c586b02da6e257d6e385a70ef64a7c542f4287c373f8b853405",
+      "devices": [
+        "rg35xxh",
+        "rg35xx_plus",
+        "rg35xx_sp",
+        "rg35xx_2024"
+      ]
+    },
+    {
+      "name": "muOS 2405.1 Refried Beans for RG28XX",
+      "description": "muOS 2405.1 Refried Beans firmware optimized for Anbernic RG35XXH.",
+      "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
+      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "release_date": "2024-06-23",
+      "image_download_size": 1900000000,
+      "extract_size": 4600000000,
+      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "devices": [
+        "rg28xx"
+      ]
+    }
+  ],
+  "imager": {
+    "devices": [
+      {
+        "name": "Anbernic RG40XXH",
+        "tags": ["rg40xxh"]
+      },
+      {
+        "name": "Anbernic RG35XXH",
+        "tags": ["rg35xxh"]
+      },
+      {
+        "name": "Anbernic RG35XX Plus",
+        "tags": ["rg35xx_plus"],
+        "default": "True"
+      },
+      {
+        "name": "Anbernic RG35XX SP",
+        "tags": ["rg35xx_sp"]
+      },
+      {
+        "name": "Anbernic RG35XX 2024",
+        "tags": ["rg35xx_2024"]
+      },
+      {
+        "name": "Anbernic RG28XX",
+        "tags": ["rg28xx"]
+      }
+    ]
+  }
+}
