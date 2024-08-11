@@ -7,7 +7,7 @@
       "url": "https://dl.muos.dev/RG35XX-SPLUSH24/muOS-RG35XX-2405.1-REFRIED.zip",
       "release_date": "2024-06-23",
       "image_download_size": 1900000000,
-      "extract_size": 4300000000,
+      "extract_size": 4294967296,
       "extract_sha256": "60b556c123825c586b02da6e257d6e385a70ef64a7c542f4287c373f8b853405",
       "devices": [
         "rg35xxh",
@@ -23,7 +23,7 @@
       "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
       "release_date": "2024-06-23",
       "image_download_size": 1900000000,
-      "extract_size": 4600000000,
+      "extract_size": 4626317312,
       "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
       "devices": [
         "rg28xx"
