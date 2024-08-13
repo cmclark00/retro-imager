@@ -20,19 +20,11 @@ ApplicationWindow {
     property string selectedCFW: "" // This should be set dynamically
 
     // Set the color scheme based on the selected CFW
-    property color backgroundColor: selectedCFW.toLowerCase().indexOf("muos") !== -1 ? yellowColor : beigeColor
-    property color accentColor: selectedCFW.toLowerCase().indexOf("muos") !== -1 ? yellowColor : maroonColor
+    property color backgroundColor: beigeColor
+    property color accentColor: maroonColor
 
     id: window
     visible: true
-
-    // Define your colors
-
-    // Placeholder for detecting the selected CFW
-
-    // Set the color scheme based on the selected CFW
-
-    // Apply these colors to your existing UI components below
 
     width: imageWriter.isEmbeddedMode() ? -1 : 680
     height: imageWriter.isEmbeddedMode() ? -1 : 450
@@ -74,6 +66,7 @@ ApplicationWindow {
     ColumnLayout {
         id: bg
         spacing: 0
+        
 
         Rectangle {
             id: logoContainer
@@ -83,30 +76,21 @@ ApplicationWindow {
             Image {
                 id: image
                 source: "icons/logo_sxs_imager.png"
-
-                // Specify the maximum size of the image
                 width: window.width * 0.45
                 height: window.height / 3
-
-                // Within the image's specified size rectangle, resize the
-                // image to fit within the rectangle while keeping its aspect
-                // ratio the same.  Preserving the aspect ratio implies some
-                // extra padding between the Image's extend and the actual
-                // image content: align left so all this padding is on the
-                // right.
                 fillMode: Image.PreserveAspectFit
                 horizontalAlignment: Image.AlignLeft
+                smooth: true
+                antialiasing: true
 
-                // Keep the left side of the image 40 pixels from the left
-                // edge
-                anchors.left: logoContainer.left
-                anchors.leftMargin: 40
-
-                // Equal padding above and below the image
-                anchors.top: logoContainer.top
-                anchors.bottom: logoContainer.bottom
-                anchors.topMargin: window.height / 25
-                anchors.bottomMargin: window.height / 25
+                anchors {
+                    left: logoContainer.left
+                    leftMargin: 40
+                    top: logoContainer.top
+                    bottom: logoContainer.bottom
+                    topMargin: window.height / 25
+                    bottomMargin: window.height / 25
+                }
             }
         }
 
@@ -219,12 +203,37 @@ ApplicationWindow {
                         topPadding: 0
                         Layout.minimumHeight: 40
                         Layout.fillWidth: true
-                        onClicked: {
-                            ospopup.open()
-                            osswipeview.currentItem.forceActiveFocus()
-                        }
+                        
                         Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
                         Accessible.description: qsTr("Select this button to change the custom firmware")
+                    
+                        MouseArea {
+                            id: osbuttonMouseArea
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            hoverEnabled: true
+
+                            onEntered: {
+                                bgrect1.mouseOver = true
+                            }
+
+                            onExited: {
+                                bgrect1.mouseOver = false
+                            }
+
+                            onClicked: {
+                            ospopup.open()
+                            osswipeview.currentItem.forceActiveFocus()
+                            }
+                        }
+
+                        Rectangle {
+                            id: bgrect1
+                            anchors.fill: parent
+                            color: accentColor
+                            visible: mouseOver
+                            property bool mouseOver: false
+                        }
                     }
                 }
 
@@ -257,13 +266,39 @@ ApplicationWindow {
                         Layout.minimumHeight: 40
                         Layout.preferredWidth: 200
                         Layout.fillWidth: true
-                        onClicked: {
+                        
+                        Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
+                        Accessible.description: qsTr("Select this button to change the destination storage device")
+                    
+                    
+                        MouseArea {
+                            id: dstbuttonMouseArea
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            hoverEnabled: true
+
+                            onEntered: {
+                                bgrect2.mouseOver = true
+                            }
+
+                            onExited: {
+                                bgrect2.mouseOver = false
+                            }
+
+                            onClicked: {
                             imageWriter.startDriveListPolling()
                             dstpopup.open()
                             dstlist.forceActiveFocus()
+                            }
                         }
-                        Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
-                        Accessible.description: qsTr("Select this button to change the destination storage device")
+
+                        Rectangle {
+                            id: bgrect2
+                            anchors.fill: parent
+                            color: accentColor
+                            visible: mouseOver
+                            property bool mouseOver: false
+                        }
                     }
                 }
 
@@ -817,16 +852,8 @@ ApplicationWindow {
                     Text {
                         Layout.fillWidth: true
                         font.family: roboto.name
-                        text: description
                         wrapMode: Text.WordWrap
                         color: accentColor
-                    }
-
-                    ToolTip {
-                        visible: hwMouseArea.containsMouse && typeof(tooltip) == "string" && tooltip != ""
-                        delay: 1000
-text: tooltip ? tooltip : ""
-                        clip: false
                     }
                 }
             }
@@ -838,7 +865,7 @@ text: tooltip ? tooltip : ""
 
         Item {
             width: window.width-100
-            height: contentLayout.implicitHeight + 24
+height: Math.max(contentLayout.implicitHeight + 24, 50)
             Accessible.name: name+".\n"+description
 
             MouseArea {
@@ -849,10 +876,14 @@ text: tooltip ? tooltip : ""
 
                 onEntered: {
                     bgrect.mouseOver = true
+                    mouseText.color = backgroundColor
+                    mouseText2.color = backgroundColor
                 }
 
                 onExited: {
                     bgrect.mouseOver = false
+                    mouseText.color = accentColor
+                    mouseText2.color = accentColor
                 }
 
                 onClicked: {
@@ -931,6 +962,7 @@ text: tooltip ? tooltip : ""
                     }
 
                     Text {
+                        id:mouseText
                         Layout.fillWidth: true
                         elide: Text.ElideRight
                         color: accentColor
@@ -939,6 +971,7 @@ text: tooltip ? tooltip : ""
                         text: qsTr("Released: %1").arg(release_date)
                     }
                     Text {
+                        id:mouseText2
                         Layout.fillWidth: true
                         elide: Text.ElideRight
                         color: accentColor
