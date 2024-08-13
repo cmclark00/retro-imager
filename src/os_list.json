@@ -34,7 +34,8 @@
     "devices": [
       {
         "name": "Anbernic RG40XXH",
-        "tags": ["rg40xxh"]
+        "tags": ["rg40xxh"],
+        "icon": "https://github.com/cmclark00/retro-imager/blob/875f0fe5909db7b5aec183d6c85fa45898f3cf20/src/icons/Anbernic Icons by VagueParade/RG40XX H.png"
       },
       {
         "name": "Anbernic RG35XXH",
