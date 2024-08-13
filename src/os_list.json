@@ -42,8 +42,7 @@
       },
       {
         "name": "Anbernic RG35XX Plus",
-        "tags": ["rg35xx_plus"],
-        "default": "True"
+        "tags": ["rg35xx_plus"]
       },
       {
         "name": "Anbernic RG35XX SP",

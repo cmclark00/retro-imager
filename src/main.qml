@@ -11,13 +11,34 @@ import QtQuick.Controls.Material 2.2
 import "qmlcomponents"
 
 ApplicationWindow {
+    // Define the colors
+    property color beigeColor: "#c4bebb"
+    property color maroonColor: "#800000"
+    property color yellowColor: "#fcad01"
+
+    // Placeholder for detecting the selected CFW
+    property string selectedCFW: "" // This should be set dynamically
+
+    // Set the color scheme based on the selected CFW
+    property color backgroundColor: selectedCFW.toLowerCase().indexOf("muos") !== -1 ? yellowColor : beigeColor
+    property color accentColor: selectedCFW.toLowerCase().indexOf("muos") !== -1 ? yellowColor : maroonColor
+
     id: window
     visible: true
+
+    // Define your colors
+
+    // Placeholder for detecting the selected CFW
+
+    // Set the color scheme based on the selected CFW
+
+    // Apply these colors to your existing UI components below
 
     width: imageWriter.isEmbeddedMode() ? -1 : 680
     height: imageWriter.isEmbeddedMode() ? -1 : 450
     minimumWidth: imageWriter.isEmbeddedMode() ? -1 : 680
-    minimumHeight: imageWriter.isEmbeddedMode() ? -1 : 420
+    minimumHeight: imageWriter.isEmbeddedMode() ? -1 : 450
+
 
     title: qsTr("Retro Imager v%1").arg(imageWriter.constantVersion())
 
@@ -56,6 +77,7 @@ ApplicationWindow {
 
         Rectangle {
             id: logoContainer
+            color: accentColor
             implicitHeight: window.height/4
 
             Image {
@@ -89,7 +111,7 @@ ApplicationWindow {
         }
 
         Rectangle {
-            color: "#fcad01"
+            color: backgroundColor
             implicitWidth: window.width
             implicitHeight: window.height * (1 - 1/4)
 
@@ -115,7 +137,7 @@ ApplicationWindow {
 
                     Text {
                         id: text0
-                        color: "#ffffff"
+                        color: accentColor
                         text: qsTr("Retro Gaming Handheld Device")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
@@ -135,12 +157,37 @@ ApplicationWindow {
                         topPadding: 0
                         Layout.minimumHeight: 40
                         Layout.fillWidth: true
-                        onClicked: {
-                            hwpopup.open()
-                            hwlist.forceActiveFocus()
-                        }
+
                         Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
                         Accessible.description: qsTr("Select this button to choose your target Retro Gaming Handheld")
+
+                        MouseArea {
+                            id: hwbuttonMouseArea
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            hoverEnabled: true
+
+                            onEntered: {
+                                bgrect.mouseOver = true
+                            }
+
+                            onExited: {
+                                bgrect.mouseOver = false
+                            }
+
+                            onClicked: {
+                            hwpopup.open()
+                            hwlist.forceActiveFocus()
+                            }
+                        }
+
+                        Rectangle {
+                            id: bgrect
+                            anchors.fill: parent
+                            color: accentColor
+                            visible: mouseOver
+                            property bool mouseOver: false
+                        }
                     }
                 }
 
@@ -153,7 +200,7 @@ ApplicationWindow {
 
                     Text {
                         id: text1
-                        color: "#ffffff"
+                        color: accentColor
                         text: qsTr("Custom Firmware")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
@@ -190,7 +237,7 @@ ApplicationWindow {
 
                     Text {
                         id: text2
-                        color: "#ffffff"
+                        color: accentColor
                         text: qsTr("Storage")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
@@ -230,7 +277,7 @@ ApplicationWindow {
                     Text {
                         id: progressText
                         font.pointSize: 10
-                        color: "white"
+                        color: accentColor
                         font.family: robotoBold.name
                         font.bold: true
                         visible: false
@@ -245,7 +292,7 @@ ApplicationWindow {
                         id: progressBar
                         Layout.fillWidth: true
                         visible: false
-                        Material.background: "#fcad01"
+                        Material.background: accentColor
                     }
                 }
 
@@ -313,7 +360,7 @@ ApplicationWindow {
 
                 Text {
                     Layout.columnSpan: 3
-                    color: "#ffffff"
+                    color: accentColor
                     font.pixelSize: 18
                     font.family: roboto.name
                     visible: imageWriter.isEmbeddedMode() && imageWriter.customRepo()
@@ -323,7 +370,7 @@ ApplicationWindow {
                 Text {
                     id: networkInfo
                     Layout.columnSpan: 3
-                    color: "#ffffff"
+                    color: accentColor
                     font.pixelSize: 18
                     font.family: roboto.name
                     visible: imageWriter.isEmbeddedMode()
@@ -332,7 +379,7 @@ ApplicationWindow {
 
                 Text {
                     Layout.columnSpan: 3
-                    color: "#ffffff"
+                    color: accentColor
                     font.pixelSize: 18
                     font.family: roboto.name
                     visible: !imageWriter.hasMouse()
@@ -347,7 +394,7 @@ ApplicationWindow {
                     visible: imageWriter.isEmbeddedMode()
                     implicitWidth: langbar.width
                     implicitHeight: langbar.height
-                    color: "#fcad01"
+                    color: backgroundColor
                     radius: 5
 
                     RowLayout {
@@ -442,7 +489,7 @@ ApplicationWindow {
 
         // background of title
         Rectangle {
-            color: "#fcad01"
+            color: backgroundColor
             anchors.right: parent.right
             anchors.top: parent.top
             height: 35
@@ -509,7 +556,6 @@ ApplicationWindow {
                     width: window.width-100
                     height: window.height-100
                     boundsBehavior: Flickable.StopAtBounds
-                    highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
                     ScrollBar.vertical: ScrollBar {
                         width: 10
                         policy: hwlist.contentHeight > hwlist.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
@@ -544,7 +590,7 @@ ApplicationWindow {
 
         // background of title
         Rectangle {
-            color: "#fcad01"
+            color: backgroundColor
             anchors.right: parent.right
             anchors.top: parent.top
             height: 35
@@ -607,7 +653,6 @@ ApplicationWindow {
                         width: window.width-100
                         height: window.height-100
                         boundsBehavior: Flickable.StopAtBounds
-                        highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
                         ScrollBar.vertical: ScrollBar {
                             width: 10
                             policy: oslist.contentHeight > oslist.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
@@ -661,7 +706,6 @@ ApplicationWindow {
             width: window.width-100
             height: window.height-100
             boundsBehavior: Flickable.StopAtBounds
-            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
             ScrollBar.vertical: ScrollBar {
                 width: 10
                 policy: parent.contentHeight > parent.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
@@ -728,7 +772,7 @@ ApplicationWindow {
             Rectangle {
                id: bgrect
                anchors.fill: parent
-               color: "#f5f5f5"
+               color: accentColor
                visible: mouseOver && parent.ListView.view.currentIndex !== index
                property bool mouseOver: false
             }
@@ -736,7 +780,7 @@ ApplicationWindow {
                id: borderrect
                implicitHeight: 1
                implicitWidth: parent.width
-               color: "#dcdcdc"
+               color: accentColor
                y: parent.height
             }
 
@@ -775,13 +819,13 @@ ApplicationWindow {
                         font.family: roboto.name
                         text: description
                         wrapMode: Text.WordWrap
-                        color: "#1a1a1a"
+                        color: accentColor
                     }
 
                     ToolTip {
                         visible: hwMouseArea.containsMouse && typeof(tooltip) == "string" && tooltip != ""
                         delay: 1000
-                        text: typeof(tooltip) == "string" ? tooltip : ""
+text: tooltip ? tooltip : ""
                         clip: false
                     }
                 }
@@ -819,15 +863,16 @@ ApplicationWindow {
             Rectangle {
                id: bgrect
                anchors.fill: parent
-               color: "#fcad01"
+               color: accentColor
                visible: mouseOver && parent.ListView.view.currentIndex !== index
                property bool mouseOver: false
             }
+
             Rectangle {
                id: borderrect
                implicitHeight: 1
                implicitWidth: parent.width
-               color: "#dcdcdc"
+               color: accentColor
                y: parent.height
             }
 
@@ -888,7 +933,7 @@ ApplicationWindow {
                     Text {
                         Layout.fillWidth: true
                         elide: Text.ElideRight
-                        color: "#646464"
+                        color: accentColor
                         font.weight: Font.Light
                         visible: typeof(release_date) == "string" && release_date
                         text: qsTr("Released: %1").arg(release_date)
@@ -896,7 +941,7 @@ ApplicationWindow {
                     Text {
                         Layout.fillWidth: true
                         elide: Text.ElideRight
-                        color: "#646464"
+                        color: accentColor
                         font.weight: Font.Light
                         visible: typeof(url) == "string" && url != "" && url != "internal://format"
                         text: !url ? "" :
@@ -940,7 +985,7 @@ ApplicationWindow {
 
         // background of title
         Rectangle {
-            color: "#fcad01"
+            color: backgroundColor
             anchors.right: parent.right
             anchors.top: parent.top
             height: 35
@@ -997,7 +1042,6 @@ ApplicationWindow {
                     width: window.width-100
                     height: window.height-100
                     boundsBehavior: Flickable.StopAtBounds
-                    highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
 
                     Label {
                         anchors.fill: parent
@@ -1050,16 +1094,16 @@ ApplicationWindow {
             Rectangle {
                id: dstbgrect
                anchors.fill: parent
-               color: "#fcad01"
+               color: accentColor
                visible: mouseOver && parent.ListView.view.currentIndex !== index
                property bool mouseOver: false
-
             }
+
             Rectangle {
                id: dstborderrect
                implicitHeight: 1
                implicitWidth: parent.width
-               color: "#dcdcdc"
+               color: accentColor
                y: parent.height
             }
 
@@ -1163,7 +1207,7 @@ ApplicationWindow {
             progressText.visible = true
             progressBar.visible = true
             progressBar.indeterminate = true
-            progressBar.Material.accent = "#ffffff"
+            progressBar.Material.accent = accentColor
             osbutton.enabled = false
             dstbutton.enabled = false
             hwbutton.enabled = false
@@ -1264,7 +1308,7 @@ ApplicationWindow {
                 return
 
             progressText.text = qsTr("Verifying... %1%").arg(Math.floor(newPos*100))
-            progressBar.Material.accent = "#fcad01"
+            progressBar.Material.accent = backgroundColor
             progressBar.value = newPos
         }
     }
