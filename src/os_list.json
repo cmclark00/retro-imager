@@ -35,28 +35,34 @@
       {
         "name": "Anbernic RG40XXH",
         "tags": ["rg40xxh"],
-        "icon": "https://github.com/cmclark00/retro-imager/blob/875f0fe5909db7b5aec183d6c85fa45898f3cf20/src/icons/Anbernic Icons by VagueParade/RG40XX H.png"
+        "icon": "https://github.com/cmclark00/retro-imager/blob/deb90458ecb79d07b3360e39af51dd39193eda33/src/icons/RG40XX%20H.png"
       },
       {
         "name": "Anbernic RG35XXH",
-        "tags": ["rg35xxh"]
+        "tags": ["rg35xxh"],
+        "icon": "https://github.com/cmclark00/retro-imager/blob/deb90458ecb79d07b3360e39af51dd39193eda33/src/icons/RG35XX%20H.png"
       },
       {
         "name": "Anbernic RG35XX Plus",
-        "tags": ["rg35xx_plus"]
+        "tags": ["rg35xx_plus"],
+        "icon": "https://github.com/cmclark00/retro-imager/blob/deb90458ecb79d07b3360e39af51dd39193eda33/src/icons/RG35XX%20-%20PLUS.png"
       },
       {
         "name": "Anbernic RG35XX SP",
-        "tags": ["rg35xx_sp"]
+        "tags": ["rg35xx_sp"],
+        "icon": "https://github.com/cmclark00/retro-imager/blob/deb90458ecb79d07b3360e39af51dd39193eda33/src/icons/RG35XX%20SP.png"
       },
       {
         "name": "Anbernic RG35XX 2024",
-        "tags": ["rg35xx_2024"]
+        "tags": ["rg35xx_2024"],
+        "icon": "https://github.com/cmclark00/retro-imager/blob/deb90458ecb79d07b3360e39af51dd39193eda33/src/icons/RG35XX%20-%202024.png"
       },
       {
         "name": "Anbernic RG28XX",
-        "tags": ["rg28xx"]
+        "tags": ["rg28xx"],
+        "icon": "https://github.com/cmclark00/retro-imager/blob/deb90458ecb79d07b3360e39af51dd39193eda33/src/icons/RG28XX.png?raw=true"
       }
+      
     ]
   }
 }
