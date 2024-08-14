@@ -218,6 +218,8 @@ if (WIN32)
     set(LibArchive_LIBRARIES archive_static)
     set(LibArchive_INCLUDE_DIR dependencies/libarchive-3.6.2/libarchive)
 
+    target_link_libraries(rpi-imager Qt5::Core Qt5::Gui Qt5::Quick)
+
     # Bundled fat32format
     add_subdirectory(dependencies/fat32format)
     add_dependencies(${PROJECT_NAME} fat32format)
