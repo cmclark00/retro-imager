@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: rpi-imager-deb
-        path: ./*.deb
+        path: . *.deb
