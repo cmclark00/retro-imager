@@ -40,11 +40,11 @@ jobs:
     - name: Create DMG
       run: |
         brew install create-dmg
-        create-dmg 'build_rpi-imager_someversion'
+        create-dmg 'rpi-imager.app'
         # This creates the DMG in the build directory
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: rpi-imager-dmg
-        path: build/build_rpi-imager_someversion.dmg
+        path: build/rpi-imager.dmg
