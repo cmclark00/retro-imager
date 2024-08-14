@@ -25,11 +25,12 @@ jobs:
 
     - name: Build Debian package
       run: |
+        mkdir build
+        cd build
         debuild -uc -us -b
-        cd ../../../
 
     - name: Upload Debian package as artifact
       uses: actions/upload-artifact@v3
       with:
         name: rpi-imager-deb
-        path: . *.deb
+        path: /build/*
