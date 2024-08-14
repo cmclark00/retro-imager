@@ -4,6 +4,7 @@
  */
 
 #include "winwlancredentials.h"
+#include <winsock2.h>
 #include <windows.h>
 #include <winioctl.h>
 #include <wlanapi.h>
