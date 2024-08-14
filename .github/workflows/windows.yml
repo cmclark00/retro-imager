@@ -1,0 +1,86 @@
+name: Build and Package Windows Release
+
+on:
+  push:
+    branches:
+      - qml
+  pull_request:
+    branches:
+      - qml
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.x'
+        host: 'windows_mingw'
+        target: 'desktop'
+        arch: 'win32'
+        dir: ${{ github.workspace }}/Qt
+
+    - name: Install CMake
+      uses: twang2218/install-cmake@v1.4
+      with:
+        cmake-version: '3.22.1'
+
+    - name: Install NSIS
+      uses: crazy-max/ghaction-chocolatey@v2
+      with:
+        args: install nsis
+
+    - name: Set up environment
+      run: |
+        echo "::set-env name=Qt5_DIR::${{ github.workspace }}/Qt/5.x/mingw73_32"
+        echo "::set-env name=Path::${{ env.Qt5_DIR }}/bin;${{ env.Path }}"
+        echo "::set-env name=CMAKE_PREFIX_PATH::${{ env.Qt5_DIR }}"
+    
+    - name: Build project with CMake
+      run: |
+        mkdir build
+        cd build
+        cmake -G "MinGW Makefiles" ..
+        cmake --build . --config Release
+    
+    - name: Package installer with NSIS
+      run: |
+        cd build
+        makensis *.nsi
+    
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: retro-imager-windows
+        path: build/installer_output.exe
+
+  sign:
+    needs: build
+    runs-on: windows-latest
+    if: success()
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Download build artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: retro-imager-windows
+        path: build/
+
+    - name: Sign the installer
+      run: |
+        signtool sign /fd SHA256 /a /tr http://timestamp.digicert.com /td SHA256 /d "retro-imager" /du "https://muos.dev" build/installer_output.exe
+        signtool verify /pa /v build/installer_output.exe
+
+    - name: Upload signed artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: signed-installer
+        path: build/installer_output.exe
