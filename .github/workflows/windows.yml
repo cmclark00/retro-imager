@@ -37,7 +37,7 @@ jobs:
 
     - name: Set up environment
       run: |
-        set ACTIONS_ALLOW_UNSECURE_COMMANDS=true
+        set ACTIONS_ALLOW_UNSECURE_COMMANDS='true'
         echo "::set-env name=Qt5_DIR::${{ github.workspace }}/Qt/5.x/mingw73_32"
         echo "::set-env name=Path::${{ env.Qt5_DIR }}/bin;${{ env.Path }}"
         echo "::set-env name=CMAKE_PREFIX_PATH::${{ env.Qt5_DIR }}"
