@@ -46,8 +46,9 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake -G "MinGW Makefiles" ..
+        cmake -G "MinGW Makefiles" ../src
         cmake --build . --config Release
+
     
     - name: Package installer with NSIS
       run: |
