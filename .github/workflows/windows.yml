@@ -19,7 +19,7 @@ jobs:
     - name: Set up Qt
       uses: jurplel/install-qt-action@v2
       with:
-        version: '5.x'
+        version: '5.15'
         host: 'windows'
         target: 'desktop'
         arch: 'win32'
