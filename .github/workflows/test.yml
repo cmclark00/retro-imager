@@ -26,9 +26,10 @@ jobs:
     - name: Build Debian package
       run: |
         debuild -uc -us
+        cd ../../
 
     - name: Upload Debian package as artifact
       uses: actions/upload-artifact@v3
       with:
         name: retro-imager-deb
-        path: ../*
+        path: . *.deb
