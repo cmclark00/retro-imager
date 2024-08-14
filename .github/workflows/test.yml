@@ -1,0 +1,37 @@
+name: Build Linux Artifacts
+
+on:
+  push:
+    branches: [ "qml" ]
+  pull_request:
+    branches: [ "qml" ]
+
+jobs:
+  build-linux:
+    name: Build on Linux
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [x64, arm64]
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake make gcc g++ libssl-dev
+          sudo apt-get install -y qtbase5-dev qtdeclarative5-dev libqt5svg5-dev
+
+      - name: Build Project
+        run: |
+          cd src
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_C_COMPILER=gcc
+          make
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-${{ matrix.arch }}-binaries
+          path: src/build/*
