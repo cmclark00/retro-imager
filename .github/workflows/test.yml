@@ -32,3 +32,31 @@ jobs:
       with:
         name: rpi-imager-deb
         path: /home/runner/work/retro-imager/*.deb
+
+  build-aarch64:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install QEMU and Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y qemu binfmt-support qemu-user-static docker.io
+        docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+    - name: Build Debian package for aarch64
+      run: |
+        docker run --rm -v $(pwd):/workspace -w /workspace arm64v8/ubuntu:22.04 bash -c "\
+          apt-get update && \
+          apt-get install -y build-essential devscripts debhelper cmake git libarchive-dev libcurl4-gnutls-dev liblzma-dev \
+            qtbase5-dev qtbase5-dev-tools qtdeclarative5-dev libqt5svg5-dev qttools5-dev libgnutls28-dev \
+            qml-module-qtquick2 qml-module-qtquick-controls2 qml-module-qtquick-layouts qml-module-qtquick-templates2 qml-module-qtquick-window2 qml-module-qtgraphicaleffects && \
+          debuild -uc -us"
+
+    - name: Upload Debian package for aarch64
+      uses: actions/upload-artifact@v3
+      with:
+        name: rpi-imager-deb-aarch64
+        path: /home/runner/work/retro-imager/*.deb
