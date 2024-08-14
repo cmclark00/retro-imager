@@ -1,36 +1,34 @@
-name: Build Linux Artifacts
+name: Build rpi-imager Debian Package
 
 on:
   push:
-    branches: [ "qml" ]
+    branches:
+      - qml
   pull_request:
-    branches: [ "qml" ]
+    branches:
+      - qml
 
 jobs:
-  build-linux:
-    name: Build on Linux
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        arch: [x64, arm64]
+
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Install Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake make gcc g++ libssl-dev
-          sudo apt install build-essential devscripts debhelper cmake git libarchive-dev libcurl4-gnutls-dev liblzma-dev \
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install build dependencies
+      run: |
+        sudo apt update
+        sudo apt install --no-install-recommends build-essential devscripts debhelper cmake git libarchive-dev libcurl4-gnutls-dev liblzma-dev \
             qtbase5-dev qtbase5-dev-tools qtdeclarative5-dev libqt5svg5-dev qttools5-dev libgnutls28-dev \
             qml-module-qtquick2 qml-module-qtquick-controls2 qml-module-qtquick-layouts qml-module-qtquick-templates2 qml-module-qtquick-window2 qml-module-qtgraphicaleffects
-          
-      - name: Build Project
-        run: |
-            debuild -uc -us
-            cd ../
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: linux-${{ matrix.arch }}-binaries
-          path: . *.deb
+    - name: Build Debian package
+      run: |
+        debuild -uc -us
+
+    - name: Upload Debian package as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: retro-imager-deb
+        path: ../*.deb
