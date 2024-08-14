@@ -38,9 +38,10 @@ jobs:
         run: |
           cd rpi-imager
           debuild -uc -us
+          cd ../../
 
       - name: Upload .deb package as artifact
         uses: actions/upload-artifact@v3
         with:
           name: rpi-imager-deb
-          path: /home/runner/work/retro-imager/*.deb
+          path: /*.deb
