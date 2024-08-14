@@ -1,0 +1,47 @@
+name: macOS Build
+
+on:
+  push:
+    branches:
+      - qml
+  pull_request:
+    branches:
+      - qml
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Qt environment
+      run: |
+        # Install Homebrew if not installed
+        which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+        # Install Qt 5.x and CMake
+        brew install qt@5 cmake
+
+        # Add Qt 5 to PATH
+        echo 'export PATH="/usr/local/opt/qt@5/bin:$PATH"' >> $GITHUB_ENV
+
+    - name: Build Project
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build .
+
+    - name: Create DMG
+      run: |
+        brew install create-dmg
+        create-dmg 'build_rpi-imager_someversion'
+        # This creates the DMG in the build directory
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: rpi-imager-dmg
+        path: build/build_rpi-imager_someversion.dmg
