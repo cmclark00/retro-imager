@@ -27,11 +27,9 @@ jobs:
       - name: Build Project
         run: |
             debuild -uc -us
-            cd ..
-
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: linux-${{ matrix.arch }}-binaries
-          path: .*
+          path: ../*.deb
