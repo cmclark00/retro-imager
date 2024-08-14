@@ -25,10 +25,10 @@ jobs:
         arch: 'win32'
         dir: ${{ github.workspace }}/Qt
 
-    - name: Install CMake
-      uses: twang2218/install-cmake@v1.4
+    - name: Install Latest CMake
+      uses: ssrobins/install-cmake@v1
       with:
-        cmake-version: '3.22.1'
+        version: '3.22.1'
 
     - name: Install NSIS
       uses: crazy-max/ghaction-chocolatey@v2
