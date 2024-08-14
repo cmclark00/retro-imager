@@ -8,6 +8,7 @@
 
 #include <QObject>
 #include <QIODevice>
+#include <winsock2.h>
 #include <windows.h>
 
 class WinFile : public QObject
