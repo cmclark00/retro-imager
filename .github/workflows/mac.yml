@@ -34,7 +34,7 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake -DCMAKE_PREFIX_PATH=$(brew --prefix qt@5) ..
+        cmake -DCMAKE_PREFIX_PATH=$(brew --prefix qt@5) ../src
         cmake --build .
 
     - name: Create DMG
