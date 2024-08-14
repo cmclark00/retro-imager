@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: rpi-imager-deb
-        path: /home/runner/work/retro-imager/*
+        path: /home/runner/work/retro-imager/*.deb
