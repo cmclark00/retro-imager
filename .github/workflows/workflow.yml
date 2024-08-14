@@ -29,6 +29,11 @@ jobs:
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_C_COMPILER=gcc
           make
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-${{ matrix.arch }}-binaries
+          path: build/*
 
   build-macos:
     name: Build on macOS
@@ -46,6 +51,11 @@ jobs:
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=$(if [ "${{ matrix.arch }}" == "x64" ]; then echo "x86_64"; else echo "arm64"; fi)
           make
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: macos-${{ matrix.arch }}-binaries
+          path: build/*
 
   build-windows:
     name: Build on Windows
@@ -65,3 +75,8 @@ jobs:
           cd build
           cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
           mingw32-make
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-${{ matrix.arch }}-binaries
+          path: build/*
