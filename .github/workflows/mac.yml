@@ -47,4 +47,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: rpi-imager-dmg
-        path: build/rpi-imager.dmg
+        path: /Users/runner/work/retro-imager/retro-imager/rpi-imager.dmg
