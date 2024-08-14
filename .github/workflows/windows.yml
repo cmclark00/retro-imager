@@ -19,10 +19,10 @@ jobs:
     - name: Set up Qt
       uses: jurplel/install-qt-action@v2
       with:
-        version: '5.15'
+        version: '5.15.2'
         host: 'windows'
         target: 'desktop'
-        arch: 'win32'
+        arch: 'win32_mingw81'
         dir: ${{ github.workspace }}/Qt
 
     - name: Install Latest CMake
