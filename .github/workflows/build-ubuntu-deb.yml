@@ -1,4 +1,14 @@
-name: Build on Linux
+name: Build Ubuntu .deb
+
+on:
+  push:
+    branches: [ "qml" ]
+  pull_request:
+    branches: [ "qml" ]
+
+jobs:
+  build-linux:
+    name: Build on Linux
     runs-on: ubuntu-latest
     strategy:
       matrix:
