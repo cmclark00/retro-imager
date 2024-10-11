@@ -11,15 +11,22 @@ import QtQuick.Controls.Material 2.2
 import "qmlcomponents"
 
 ApplicationWindow {
+        // Define the colors
+    property color beigeColor: "#c4bebb"
+    property color maroonColor: "#800000"
+    property color yellowColor: "#fcad01"
+    property string selectedCFW: "" // This should be set dynamically
+    property color backgroundColor: beigeColor
+    property color accentColor: maroonColor
     id: window
     visible: true
 
     width: imageWriter.isEmbeddedMode() ? -1 : 680
     height: imageWriter.isEmbeddedMode() ? -1 : 450
     minimumWidth: imageWriter.isEmbeddedMode() ? -1 : 680
-    minimumHeight: imageWriter.isEmbeddedMode() ? -1 : 420
+    minimumHeight: imageWriter.isEmbeddedMode() ? -1 : 450
 
-    title: qsTr("Raspberry Pi Imager v%1").arg(imageWriter.constantVersion())
+    title: qsTr("Retro Imager v%1").arg(imageWriter.constantVersion())
 
     FontLoader {id: roboto;      source: "fonts/Roboto-Regular.ttf"}
     FontLoader {id: robotoLight; source: "fonts/Roboto-Light.ttf"}
@@ -56,6 +63,7 @@ ApplicationWindow {
 
         Rectangle {
             id: logoContainer
+            color: accentColor
             implicitHeight: window.height/4
 
             Image {
@@ -66,30 +74,22 @@ ApplicationWindow {
                 width: window.width * 0.45
                 height: window.height / 3
 
-                // Within the image's specified size rectangle, resize the
-                // image to fit within the rectangle while keeping its aspect
-                // ratio the same.  Preserving the aspect ratio implies some
-                // extra padding between the Image's extend and the actual
-                // image content: align left so all this padding is on the
-                // right.
-                fillMode: Image.PreserveAspectFit
-                horizontalAlignment: Image.AlignLeft
+                smooth: true
+                antialiasing: true
 
-                // Keep the left side of the image 40 pixels from the left
-                // edge
-                anchors.left: logoContainer.left
-                anchors.leftMargin: 40
-
-                // Equal padding above and below the image
-                anchors.top: logoContainer.top
-                anchors.bottom: logoContainer.bottom
-                anchors.topMargin: window.height / 25
-                anchors.bottomMargin: window.height / 25
+                anchors {
+                    left: logoContainer.left
+                    leftMargin: 40
+                    top: logoContainer.top
+                    bottom: logoContainer.bottom
+                    topMargin: window.height / 25
+                    bottomMargin: window.height / 25
+                }
             }
         }
 
         Rectangle {
-            color: "#cd2355"
+            color: backgroundColor
             implicitWidth: window.width
             implicitHeight: window.height * (1 - 1/4)
 
@@ -115,8 +115,8 @@ ApplicationWindow {
 
                     Text {
                         id: text0
-                        color: "#ffffff"
-                        text: qsTr("Raspberry Pi Device")
+                        color: accentColor
+                        text: qsTr("Retro Gaming Handheld Device")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
                         Layout.preferredWidth: 100
@@ -135,12 +135,31 @@ ApplicationWindow {
                         topPadding: 0
                         Layout.minimumHeight: 40
                         Layout.fillWidth: true
-                        onClicked: {
+                        Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
+                        Accessible.description: qsTr("Select this button to choose your target Retro Gaming Handheld")
+                        MouseArea {
+                            id: hwbuttonMouseArea
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            hoverEnabled: true
+                            onEntered: {
+                                bgrect.mouseOver = true
+                            }
+                            onExited: {
+                                bgrect.mouseOver = false
+                            }
+                            onClicked: {
                             hwpopup.open()
                             hwlist.forceActiveFocus()
+                            }
                         }
-                        Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
-                        Accessible.description: qsTr("Select this button to choose your target Raspberry Pi")
+                        Rectangle {
+                            id: bgrect
+                            anchors.fill: parent
+                            color: accentColor
+                            visible: mouseOver
+                            property bool mouseOver: false
+                        }
                     }
                 }
 
@@ -153,8 +172,8 @@ ApplicationWindow {
 
                     Text {
                         id: text1
-                        color: "#ffffff"
-                        text: qsTr("Operating System")
+                        color: accentColor
+                        text: qsTr("Custom Firmware")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
                         font.pixelSize: 12
@@ -165,19 +184,40 @@ ApplicationWindow {
 
                     ImButton {
                         id: osbutton
-                        text: imageWriter.srcFileName() === "" ? qsTr("CHOOSE OS") : imageWriter.srcFileName()
+                        text: imageWriter.srcFileName() === "" ? qsTr("CHOOSE CFW") : imageWriter.srcFileName()
                         spacing: 0
                         padding: 0
                         bottomPadding: 0
                         topPadding: 0
                         Layout.minimumHeight: 40
                         Layout.fillWidth: true
-                        onClicked: {
+                        Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
+                        Accessible.description: qsTr("Select this button to change the custom firmware")
+                    
+                        MouseArea {
+                            id: osbuttonMouseArea
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            hoverEnabled: true
+                            onEntered: {
+                                bgrect1.mouseOver = true
+                            }
+                            onExited: {
+                                bgrect1.mouseOver = false
+                            }
+                            onClicked: {
                             ospopup.open()
                             osswipeview.currentItem.forceActiveFocus()
+                            }
                         }
-                        Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
-                        Accessible.description: qsTr("Select this button to change the operating system")
+                
+                        Rectangle {
+                            id: bgrect1
+                            anchors.fill: parent
+                            color: accentColor
+                            visible: mouseOver
+                            property bool mouseOver: false
+                        }
                     }
                 }
 
@@ -190,7 +230,7 @@ ApplicationWindow {
 
                     Text {
                         id: text2
-                        color: "#ffffff"
+                        color: accentColor
                         text: qsTr("Storage")
                         Layout.fillWidth: true
                         Layout.preferredHeight: 17
@@ -230,7 +270,7 @@ ApplicationWindow {
                     Text {
                         id: progressText
                         font.pointSize: 10
-                        color: "white"
+                        color: accentColor
                         font.family: robotoBold.name
                         font.bold: true
                         visible: false
@@ -244,7 +284,7 @@ ApplicationWindow {
                         id: progressBar
                         Layout.fillWidth: true
                         visible: false
-                        Material.background: "#d15d7d"
+                        Material.background: accentColor
                     }
                 }
 
@@ -312,7 +352,7 @@ ApplicationWindow {
 
                 Text {
                     Layout.columnSpan: 3
-                    color: "#ffffff"
+                    color: accentColor
                     font.pixelSize: 18
                     font.family: roboto.name
                     visible: imageWriter.isEmbeddedMode() && imageWriter.customRepo()
@@ -322,7 +362,7 @@ ApplicationWindow {
                 Text {
                     id: networkInfo
                     Layout.columnSpan: 3
-                    color: "#ffffff"
+                    color: accentColor
                     font.pixelSize: 18
                     font.family: roboto.name
                     visible: imageWriter.isEmbeddedMode()
@@ -331,7 +371,7 @@ ApplicationWindow {
 
                 Text {
                     Layout.columnSpan: 3
-                    color: "#ffffff"
+                    color: accentColor
                     font.pixelSize: 18
                     font.family: roboto.name
                     visible: !imageWriter.hasMouse()
@@ -346,7 +386,7 @@ ApplicationWindow {
                     visible: imageWriter.isEmbeddedMode()
                     implicitWidth: langbar.width
                     implicitHeight: langbar.height
-                    color: "#ffffe3"
+                    color: backgroundColor
                     radius: 5
 
                     RowLayout {
@@ -442,7 +482,7 @@ ApplicationWindow {
         // background of title
         Rectangle {
             id: hwpopup_title_background
-            color: "#f5f5f5"
+            color: backgroundColor
             anchors.left: parent.left
             anchors.top: parent.top
             height: 35
@@ -507,7 +547,6 @@ ApplicationWindow {
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             boundsBehavior: Flickable.StopAtBounds
-            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
             ScrollBar.vertical: ScrollBar {
                 anchors.right: parent.right
                 width: 10
@@ -542,14 +581,14 @@ ApplicationWindow {
         // background of title
         Rectangle {
             id: ospopup_title_background
-            color: "#f5f5f5"
+            color: backgroundColor
             anchors.left: parent.left
             anchors.top: parent.top
             height: 35
             width: parent.width
 
             Text {
-                text: qsTr("Operating System")
+                text: qsTr("Custom Firmware")
                 horizontalAlignment: Text.AlignHCenter
                 anchors.fill: parent
                 anchors.topMargin: 10
@@ -607,7 +646,6 @@ ApplicationWindow {
                 anchors.bottom: parent.bottom
                 width: ospopup.width
                 boundsBehavior: Flickable.StopAtBounds
-                highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
                 ScrollBar.vertical: ScrollBar {
                     anchors.right: parent.right
                     width: 10
@@ -659,7 +697,6 @@ ApplicationWindow {
             delegate: osdelegate
 
             boundsBehavior: Flickable.StopAtBounds
-            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
             ScrollBar.vertical: ScrollBar {
                 width: 10
                 policy: parent.contentHeight > parent.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
@@ -726,7 +763,7 @@ ApplicationWindow {
             Rectangle {
                 id: bgrect
                 anchors.fill: parent
-                color: "#f5f5f5"
+                color: accentColor
                 visible: mouseOver && parent.ListView.view.currentIndex !== index
                 property bool mouseOver: false
             }
@@ -734,7 +771,7 @@ ApplicationWindow {
                 id: borderrect
                 implicitHeight: 1
                 implicitWidth: parent.width
-                color: "#dcdcdc"
+                color: accentColor
                 y: parent.height
             }
 
@@ -771,16 +808,8 @@ ApplicationWindow {
                     Text {
                         Layout.fillWidth: true
                         font.family: roboto.name
-                        text: description
                         wrapMode: Text.WordWrap
-                        color: "#1a1a1a"
-                    }
-
-                    ToolTip {
-                        visible: hwMouseArea.containsMouse && typeof(tooltip) == "string" && tooltip != ""
-                        delay: 1000
-                        text: typeof(tooltip) == "string" ? tooltip : ""
-                        clip: false
+                        color: accentColor
                     }
                 }
             }
@@ -792,7 +821,7 @@ ApplicationWindow {
 
         Item {
             width: window.width-100
-            height: contentLayout.implicitHeight + 24
+            height: Math.max(contentLayout.implicitHeight + 24, 50)
             Accessible.name: name+".\n"+description
 
             MouseArea {
@@ -803,10 +832,14 @@ ApplicationWindow {
 
                 onEntered: {
                     bgrect.mouseOver = true
+                    mouseText.color = backgroundColor
+                    mouseText2.color = backgroundColor
                 }
 
                 onExited: {
                     bgrect.mouseOver = false
+                    mouseText.color = accentColor
+                    mouseText2.color = accentColor
                 }
 
                 onClicked: {
@@ -817,7 +850,7 @@ ApplicationWindow {
             Rectangle {
                 id: bgrect
                 anchors.fill: parent
-                color: "#f5f5f5"
+                color: backgroundColor
                 visible: mouseOver && parent.ListView.view.currentIndex !== index
                 property bool mouseOver: false
             }
@@ -825,7 +858,7 @@ ApplicationWindow {
                 id: borderrect
                 implicitHeight: 1
                 implicitWidth: parent.width
-                color: "#dcdcdc"
+                color: accentColor
                 y: parent.height
             }
 
@@ -884,17 +917,19 @@ ApplicationWindow {
                     }
 
                     Text {
+                        id:mouseText
                         Layout.fillWidth: true
                         elide: Text.ElideRight
-                        color: "#646464"
+                        color: accentColor
                         font.weight: Font.Light
                         visible: typeof(release_date) == "string" && release_date
                         text: qsTr("Released: %1").arg(release_date)
                     }
                     Text {
+                        id:mouseText2
                         Layout.fillWidth: true
                         elide: Text.ElideRight
-                        color: "#646464"
+                        color: accentColor
                         font.weight: Font.Light
                         visible: typeof(url) == "string" && url != "" && url != "internal://format"
                         text: !url ? "" :
@@ -939,7 +974,7 @@ ApplicationWindow {
         // background of title
         Rectangle {
             id: dstpopup_title_background
-            color: "#f5f5f5"
+            color: backgroundColor
             anchors.left: parent.left
             anchors.top: parent.top
             height: 35
@@ -993,7 +1028,6 @@ ApplicationWindow {
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             boundsBehavior: Flickable.StopAtBounds
-            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
             clip: true
 
             Label {
@@ -1051,7 +1085,7 @@ ApplicationWindow {
                 anchors.right: parent.right
                 height: 60
 
-                color: mouseOver ? "#f5f5f5" : "#ffffff"
+                color: mouseOver ? accentColor : "#ffffff"
                 property bool mouseOver: false
 
                 RowLayout {
@@ -1150,7 +1184,7 @@ ApplicationWindow {
         yesButton: true
         noButton: true
         title: qsTr("Are you sure you want to quit?")
-        text: qsTr("Raspberry Pi Imager is still busy.<br>Are you sure you want to quit?")
+        text: qsTr("Retro-Imager is still busy.<br>Are you sure you want to quit?")
         onYes: {
             Qt.quit()
         }
@@ -1174,7 +1208,7 @@ ApplicationWindow {
             progressText.visible = true
             progressBar.visible = true
             progressBar.indeterminate = true
-            progressBar.Material.accent = "#ffffff"
+            progressBar.Material.accent = accentColor
             osbutton.enabled = false
             dstbutton.enabled = false
             hwbutton.enabled = false
@@ -1277,7 +1311,7 @@ ApplicationWindow {
                 return
 
             progressText.text = qsTr("Verifying... %1%").arg(Math.floor(newPos*100))
-            progressBar.Material.accent = "#6cc04a"
+            progressBar.Material.accent = accentColor
             progressBar.value = newPos
         }
     }
@@ -1652,7 +1686,7 @@ ApplicationWindow {
         oslist.currentIndex = -1
         osswipeview.currentIndex = 0
         imageWriter.setSrc("")
-        osbutton.text = qsTr("CHOOSE OS")
+        osbutton.text = qsTr("CHOOSE CFW")
         writebutton.enabled = false
 
         hwbutton.text = hwmodel.name

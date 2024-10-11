@@ -19,6 +19,14 @@ Popup {
     closePolicy: Popup.CloseOnEscape
     modal: true
 
+        // Define the colors
+    property color beigeColor: "#c4bebb"
+    property color maroonColor: "#800000"
+    property color yellowColor: "#fcad01"
+    property string selectedCFW: "" // This should be set dynamically
+    // Set the color scheme based on the selected CFW
+    property color backgroundColor: selectedCFW.toLowerCase().indexOf("muos") !== -1 ? yellowColor : beigeColor
+    property color accentColor: selectedCFW.toLowerCase().indexOf("muos") !== -1 ? yellowColor : maroonColor
     property alias title: msgpopupheader.text
     property alias text: msgpopupbody.text
     property bool continueButton: true
@@ -31,7 +39,7 @@ Popup {
     // background of title
     Rectangle {
         id: msgpopup_title_background
-        color: "#f5f5f5"
+        color: accentColor
         anchors.left: parent.left
         anchors.top: parent.top
         height: 35
