@@ -1,0 +1,36 @@
+name: Windows x64 Build
+
+on:
+  push:
+    branches:
+      - boogaloo
+  pull_request:
+    branches:
+      - boogaloo
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.7.3'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+
+      - name: Install CMake
+        uses: twxz/install-cmake@v2
+        with:
+          cmake-version: 'latest'
+
+      - name: Configure CMake
+        run: cmake -S . -B build -G "NMake Makefiles" -DCMAKE_PREFIX_PATH:PATH="%Qt5_DIR%"
+
+      - name: Build the project
+        run: cmake --build build --config Release
