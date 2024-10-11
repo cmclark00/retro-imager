@@ -1,32 +1,94 @@
 {
   "os_list": [
     {
-      "name": "muOS 2405.1 Refried Beans for RG35XX Plus/H/SP/2024",
-      "description": "muOS 2405.1 Refried Beans firmware optimized for Anbernic RG35XX Plus/H/SP/2024.",
+      "name": "muOS 2410.1 Banana for RG35XX Plus",
+      "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX Plus.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
       "url": "https://dl.muos.dev/RG35XX-SPLUSH24/muOS-RG35XX-2405.1-REFRIED.zip",
-      "release_date": "2024-06-23",
+      "release_date": "2024-10-12",
       "image_download_size": 1900000000,
       "extract_size": 4294967296,
       "extract_sha256": "60b556c123825c586b02da6e257d6e385a70ef64a7c542f4287c373f8b853405",
       "devices": [
-        "rg35xxh",
-        "rg35xx_plus",
-        "rg35xx_sp",
-        "rg35xx_2024"
+        "rg35xx_plus"
       ]
     },
     {
-      "name": "muOS 2405.1 Refried Beans for RG28XX",
-      "description": "muOS 2405.1 Refried Beans firmware optimized for Anbernic RG35XXH.",
+      "name": "muOS 2410.1 Banana for RG28XX",
+      "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG28XX.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
       "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
-      "release_date": "2024-06-23",
+      "release_date": "2024-10-12",
       "image_download_size": 1900000000,
       "extract_size": 4626317312,
       "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
       "devices": [
         "rg28xx"
+      ]
+    },
+    {
+      "name": "muOS 2410.1 Banana for RG35XXH",
+      "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXH.",
+      "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
+      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "release_date": "2024-10-12",
+      "image_download_size": 1900000000,
+      "extract_size": 4626317312,
+      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "devices": [
+        "rg35xxh"
+      ]
+    },
+    {
+      "name": "muOS 2410.1 Banana for RG35XXSP",
+      "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXSP.",
+      "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
+      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "release_date": "2024-10-12",
+      "image_download_size": 1900000000,
+      "extract_size": 4626317312,
+      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "devices": [
+        "rg35xx_sp"
+      ]
+    },
+    {
+      "name": "muOS 2410.1 Banana for RG35XX24",
+      "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX24.",
+      "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
+      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "release_date": "2024-10-12",
+      "image_download_size": 1900000000,
+      "extract_size": 4626317312,
+      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "devices": [
+        "rg35xx_2024"
+      ]
+    },
+    {
+      "name": "muOS 2410.1 Banana for RG40XXH",
+      "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXH.",
+      "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
+      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "release_date": "2024-10-12",
+      "image_download_size": 1900000000,
+      "extract_size": 4626317312,
+      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "devices": [
+        "rg40xxh"
+      ]
+    },
+    {
+      "name": "muOS 2410.1 Banana for RG40XXV",
+      "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXV.",
+      "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
+      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "release_date": "2024-10-12",
+      "image_download_size": 1900000000,
+      "extract_size": 4626317312,
+      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "devices": [
+        "rg40xxv"
       ]
     }
   ],
@@ -36,6 +98,11 @@
         "name": "Anbernic RG40XXH",
         "tags": ["rg40xxh"],
         "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG40XX%20H.png?raw=true"
+      },
+      {
+        "name": "Anbernic RG40XXV",
+        "tags": ["rg40xxv"],
+        "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG40XX%20V.png?raw=true"
       },
       {
         "name": "Anbernic RG35XXH",
