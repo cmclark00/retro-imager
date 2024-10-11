@@ -29,7 +29,7 @@ jobs:
           choco install cmake --installargs '"ADD_CMAKE_TO_PATH=System"' --yes
 
       - name: Configure CMake
-        run: cmake "D:/a/retro-imager/src -S . -B build -G "NMake Makefiles" -DCMAKE_PREFIX_PATH:PATH="%Qt5_DIR%"
+        run: cmake "D:/a/retro-imager/src" -S . -B build -G "NMake Makefiles" -DCMAKE_PREFIX_PATH:PATH="%Qt5_DIR%"
 
       - name: Build the project
-        run: cmake "D:/a/retro-imager/src --build build --config Release
+        run: cmake "D:/a/retro-imager/src" --build build --config Release
