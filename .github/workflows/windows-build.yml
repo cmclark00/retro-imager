@@ -25,7 +25,8 @@ jobs:
           arch: 'win64_msvc2019_64'
 
       - name: Install CMake
-        uses: lukka/get-cmake
+        run: |
+          choco install cmake --installargs '"ADD_CMAKE_TO_PATH=System"' --yes
 
       - name: Configure CMake
         run: cmake -S . -B build -G "NMake Makefiles" -DCMAKE_PREFIX_PATH:PATH="%Qt5_DIR%"
