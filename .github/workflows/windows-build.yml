@@ -28,8 +28,19 @@ jobs:
         run: |
           choco install cmake --installargs '"ADD_CMAKE_TO_PATH=System"' --yes
 
+      - name: Install Visual Studio Build Tools
+        run: |
+          choco install visualstudio2019buildtools --version=16.11.9 --yes
+          choco install visualstudio2019-workload-vctools --yes
+
       - name: Configure CMake
-        run: cmake -S src -B build -G "NMake Makefiles" -DCMAKE_PREFIX_PATH:PATH="%Qt5_DIR%"
+        shell: cmd
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+          cmake -S src -B build -G "NMake Makefiles" -DCMAKE_PREFIX_PATH:PATH="%Qt5_DIR%"
 
       - name: Build the project
-        run: cmake --build build --config Release
+        shell: cmd
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+          cmake --build build --config Release
