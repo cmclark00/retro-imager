@@ -4,11 +4,11 @@
       "name": "muOS 2410.1 Banana for RG35XX Plus",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX Plus.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
-      "url": "https://dl.muos.dev/RG35XX-SPLUSH24/muOS-RG35XX-2405.1-REFRIED.zip",
+      "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-PLUS-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
-      "image_download_size": 1900000000,
-      "extract_size": 4294967296,
-      "extract_sha256": "60b556c123825c586b02da6e257d6e385a70ef64a7c542f4287c373f8b853405",
+      "image_download_size": 2151537628,
+      "extract_size": 4504682496,
+      "extract_sha256": "5ab20e7a3427dead07d5291ff93d0859cb22a07437a0bdc69c177badd390237e",
       "devices": [
         "rg35xx_plus"
       ]
@@ -17,11 +17,11 @@
       "name": "muOS 2410.1 Banana for RG28XX",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG28XX.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
-      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG28XX-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
-      "image_download_size": 1900000000,
-      "extract_size": 4626317312,
-      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "image_download_size": 2158432397,
+      "extract_size": 4504682496,
+      "extract_sha256": "58b63e26ddb09779a447657af79e1322acc14d5e2eb9eab18f7518816556bd9e",
       "devices": [
         "rg28xx"
       ]
@@ -30,11 +30,11 @@
       "name": "muOS 2410.1 Banana for RG35XXH",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXH.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
-      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-H-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
-      "image_download_size": 1900000000,
-      "extract_size": 4626317312,
-      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "image_download_size": 2132124667,
+      "extract_size": 4504682496,
+      "extract_sha256": "00a6ba492499ffd3b0cd8d48b0fa3a999c3d3c1747c6833a9621b621cf2c1d98",
       "devices": [
         "rg35xxh"
       ]
@@ -43,11 +43,11 @@
       "name": "muOS 2410.1 Banana for RG35XXSP",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXSP.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
-      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-SP-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
-      "image_download_size": 1900000000,
-      "extract_size": 4626317312,
-      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "image_download_size": 2176694960,
+      "extract_size": 4504682496,
+      "extract_sha256": "42474c269148d387c24580db6287de93099ac6001389ee5dddbff801594327f5",
       "devices": [
         "rg35xx_sp"
       ]
@@ -56,11 +56,11 @@
       "name": "muOS 2410.1 Banana for RG35XX24",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX24.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
-      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-2024-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
-      "image_download_size": 1900000000,
-      "extract_size": 4626317312,
-      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "image_download_size": 2151137645,
+      "extract_size": 4504682496,
+      "extract_sha256": "d9b897b0586abdcd3dc2fab214e8192169c38f71d6641833df9d0a2f7dc45eb0",
       "devices": [
         "rg35xx_2024"
       ]
@@ -69,11 +69,11 @@
       "name": "muOS 2410.1 Banana for RG40XXH",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXH.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
-      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-H-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
-      "image_download_size": 1900000000,
-      "extract_size": 4626317312,
-      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "image_download_size": 2132388103,
+      "extract_size": 4504682496,
+      "extract_sha256": "b3bcca660d953ea75a5ca9b1445304afd3e674e027c115aadc5795af71e0a54d",
       "devices": [
         "rg40xxh"
       ]
@@ -82,11 +82,11 @@
       "name": "muOS 2410.1 Banana for RG40XXV",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXV.",
       "icon": "https://muos.dev/lib/tpl/muos/images/logo.png",
-      "url": "https://dl.muos.dev/RG28XX/muOS-RG28XX-2405.1-REFRIED.zip",
+      "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-V-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
-      "image_download_size": 1900000000,
-      "extract_size": 4626317312,
-      "extract_sha256": "4d538985e82eef5aa98b438f88276bb69c015533b0ee537ddac3d8642d2f8e94",
+      "image_download_size": 2132476961,
+      "extract_size": 4504682496,
+      "extract_sha256": "e4bb53d8fc308c8d2f5250c5d5e715881033841b6893b6dda650b5e2bda1c43c",
       "devices": [
         "rg40xxv"
       ]
