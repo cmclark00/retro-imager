@@ -77,11 +77,10 @@ ApplicationWindow {
 
                 anchors {
                     left: logoContainer.left
-                    leftMargin: 40
                     top: logoContainer.top
                     bottom: logoContainer.bottom
-                    topMargin: window.height / 25
-                    bottomMargin: window.height / 25
+                    topMargin: window.height
+                    bottomMargin: window.height
                 }
             }
         }
