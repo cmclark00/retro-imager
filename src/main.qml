@@ -72,8 +72,15 @@ ApplicationWindow {
                 anchors.fill: parent
                 smooth: true
                 antialiasing: true
-
+                fillMode: Image.PreserveAspectFit
+                // Set a placeholder color to help in debugging
+                Rectangle {
+                    anchors.fill: parent
+                    color: "#ff0000" // Red to make it stand out
+                    visible: source === "" // Show if the image source is missing or empty
+                }
             }
+
         }
 
         Rectangle {
