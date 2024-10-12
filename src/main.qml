@@ -259,7 +259,7 @@ ApplicationWindow {
                         Accessible.description: qsTr("Select this button to select you storage device")
                     
                         MouseArea {
-                            id: osbuttonMouseArea
+                            id: dstbuttonMouseArea
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor
                             hoverEnabled: true
