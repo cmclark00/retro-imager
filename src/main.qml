@@ -68,19 +68,20 @@ ApplicationWindow {
 
             Image {
                 id: image
+                color: accentColor
                 source: "icons/logo_sxs_imager.png"
-                anchors.fill: parent
+
+                // Specify the maximum size of the image
+                width: window.width
+                height: window.height / 4
+
                 smooth: true
                 antialiasing: true
-                fillMode: Image.PreserveAspectFit
-                // Set a placeholder color to help in debugging
-                Rectangle {
-                    anchors.fill: parent
-                    color: "#ff0000" // Red to make it stand out
-                    visible: source === "" // Show if the image source is missing or empty
+
+                anchors {
+                    fill: parent
                 }
             }
-
         }
 
         Rectangle {
