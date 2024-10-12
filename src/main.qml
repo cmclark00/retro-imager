@@ -26,7 +26,7 @@ ApplicationWindow {
     minimumWidth: imageWriter.isEmbeddedMode() ? -1 : 680
     minimumHeight: imageWriter.isEmbeddedMode() ? -1 : 450
 
-    title: qsTr("Retro Imager v%1").arg(imageWriter.constantVersion())
+    title: qsTr("Retro Imager v0.1").arg(imageWriter.constantVersion())
 
     FontLoader {id: roboto;      source: "fonts/Roboto-Regular.ttf"}
     FontLoader {id: robotoLight; source: "fonts/Roboto-Light.ttf"}
@@ -68,7 +68,6 @@ ApplicationWindow {
 
             Image {
                 id: image
-                color: accentColor
                 source: "icons/logo_sxs_imager.png"
 
                 // Specify the maximum size of the image
