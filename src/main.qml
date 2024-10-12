@@ -250,11 +250,6 @@ ApplicationWindow {
                         Layout.minimumHeight: 40
                         Layout.preferredWidth: 200
                         Layout.fillWidth: true
-                        onClicked: {
-                            imageWriter.startDriveListPolling()
-                            dstpopup.open()
-                            dstlist.forceActiveFocus()
-                        }
                         Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
                         Accessible.description: qsTr("Select this button to select you storage device")
                     
@@ -270,9 +265,10 @@ ApplicationWindow {
                                 bgrect2.mouseOver = false
                             }
                             onClicked: {
-                            ospopup.open()
-                            osswipeview.currentItem.forceActiveFocus()
-                            }
+                            imageWriter.startDriveListPolling()
+                            dstpopup.open()
+                            dstlist.forceActiveFocus()
+                        }
                         }
                 
                         Rectangle {
