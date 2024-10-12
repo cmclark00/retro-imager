@@ -256,7 +256,32 @@ ApplicationWindow {
                             dstlist.forceActiveFocus()
                         }
                         Accessible.ignored: ospopup.visible || dstpopup.visible || hwpopup.visible
-                        Accessible.description: qsTr("Select this button to change the destination storage device")
+                        Accessible.description: qsTr("Select this button to select you storage device")
+                    
+                        MouseArea {
+                            id: osbuttonMouseArea
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            hoverEnabled: true
+                            onEntered: {
+                                bgrect1.mouseOver = true
+                            }
+                            onExited: {
+                                bgrect1.mouseOver = false
+                            }
+                            onClicked: {
+                            ospopup.open()
+                            osswipeview.currentItem.forceActiveFocus()
+                            }
+                        }
+                
+                        Rectangle {
+                            id: bgrect1
+                            anchors.fill: parent
+                            color: accentColor
+                            visible: mouseOver
+                            property bool mouseOver: false
+                        }
                     }
                 }
 
@@ -832,8 +857,8 @@ ApplicationWindow {
 
                 onEntered: {
                     bgrect.mouseOver = true
-                    mouseText.color = backgroundColor
-                    mouseText2.color = backgroundColor
+                    mouseText.color = accentColor
+                    mouseText2.color = accentColor
                 }
 
                 onExited: {
@@ -913,7 +938,7 @@ ApplicationWindow {
                         font.family: roboto.name
                         text: description
                         wrapMode: Text.WordWrap
-                        color: "#1a1a1a"
+                        color: accentColor
                     }
 
                     Text {

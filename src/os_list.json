@@ -8,7 +8,7 @@
       "release_date": "2024-10-12",
       "image_download_size": 2151537628,
       "extract_size": 4504682496,
-      "extract_sha256": "5ab20e7a3427dead07d5291ff93d0859cb22a07437a0bdc69c177badd390237e",
+      "extract_sha256": "62c492047923e3e8709e0b015760b7f1e0db2ccab40e741fe067b49d96957624",
       "devices": [
         "rg35xx_plus"
       ]
@@ -21,7 +21,7 @@
       "release_date": "2024-10-12",
       "image_download_size": 2158432397,
       "extract_size": 4504682496,
-      "extract_sha256": "58b63e26ddb09779a447657af79e1322acc14d5e2eb9eab18f7518816556bd9e",
+      "extract_sha256": "62c492047923e3e8709e0b015760b7f1e0db2ccab40e741fe067b49d96957624",
       "devices": [
         "rg28xx"
       ]
@@ -34,7 +34,7 @@
       "release_date": "2024-10-12",
       "image_download_size": 2132124667,
       "extract_size": 4504682496,
-      "extract_sha256": "00a6ba492499ffd3b0cd8d48b0fa3a999c3d3c1747c6833a9621b621cf2c1d98",
+      "extract_sha256": "d0d54809fcc128e43a42a2e13bfcb3427be97e05d0776263612ccce08677ea08",
       "devices": [
         "rg35xxh"
       ]
@@ -47,7 +47,7 @@
       "release_date": "2024-10-12",
       "image_download_size": 2176694960,
       "extract_size": 4504682496,
-      "extract_sha256": "42474c269148d387c24580db6287de93099ac6001389ee5dddbff801594327f5",
+      "extract_sha256": "9a529d2f089bba6616615026c6ec16e282d622adbc6ae97172b7ab73d32092c4",
       "devices": [
         "rg35xx_sp"
       ]
@@ -60,7 +60,7 @@
       "release_date": "2024-10-12",
       "image_download_size": 2151137645,
       "extract_size": 4504682496,
-      "extract_sha256": "d9b897b0586abdcd3dc2fab214e8192169c38f71d6641833df9d0a2f7dc45eb0",
+      "extract_sha256": "fc0da5aa0dcda244be8dec28115210200fe259c374bb7b25d6d26f4db812d351",
       "devices": [
         "rg35xx_2024"
       ]
@@ -73,7 +73,7 @@
       "release_date": "2024-10-12",
       "image_download_size": 2132388103,
       "extract_size": 4504682496,
-      "extract_sha256": "b3bcca660d953ea75a5ca9b1445304afd3e674e027c115aadc5795af71e0a54d",
+      "extract_sha256": "fe51f4f3a7f9e51c34eb78ef704a9a6af0233d6fdf87ccd070444034003afe5c",
       "devices": [
         "rg40xxh"
       ]
@@ -86,7 +86,7 @@
       "release_date": "2024-10-12",
       "image_download_size": 2132476961,
       "extract_size": 4504682496,
-      "extract_sha256": "e4bb53d8fc308c8d2f5250c5d5e715881033841b6893b6dda650b5e2bda1c43c",
+      "extract_sha256": "aa2cd35010e1414c62b0460d8f193d7a3c56ebcf3f59a220aebe995ab93bb051",
       "devices": [
         "rg40xxv"
       ]
