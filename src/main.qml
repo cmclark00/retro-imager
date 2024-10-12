@@ -63,20 +63,12 @@ ApplicationWindow {
         Rectangle {
             id: logoContainer
             color: accentColor
+            implicitWidth: window.width
             implicitHeight: window.height/4
 
             Image {
                 id: image
                 source: "icons/logo_sxs_imager.png"
-                smooth: true
-                antialiasing: true
-
-                // Center the image within the parent (logoContainer)
-                anchors.centerIn: parent
-
-                // Optional: set a maximum size for the image if needed
-                width: Math.min(parent.width * 0.5, sourceSize.width)
-                height: Math.min(parent.height * 0.75, sourceSize.height)
             }
         }
 
