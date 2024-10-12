@@ -62,13 +62,27 @@ ApplicationWindow {
 
         Rectangle {
             id: logoContainer
-            color: accentColor
-            implicitWidth: window.width
             implicitHeight: window.height/4
 
             Image {
                 id: image
                 source: "icons/logo_sxs_imager.png"
+
+                // Specify the maximum size of the image
+                width: window.width
+                height: window.height / 3
+
+                smooth: true
+                antialiasing: true
+
+                anchors {
+                    left: logoContainer.left
+                    leftMargin: 40
+                    top: logoContainer.top
+                    bottom: logoContainer.bottom
+                    topMargin: window.height / 25
+                    bottomMargin: window.height / 25
+                }
             }
         }
 
