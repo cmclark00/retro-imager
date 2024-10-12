@@ -264,10 +264,10 @@ ApplicationWindow {
                             cursorShape: Qt.PointingHandCursor
                             hoverEnabled: true
                             onEntered: {
-                                bgrect1.mouseOver = true
+                                bgrect2.mouseOver = true
                             }
                             onExited: {
-                                bgrect1.mouseOver = false
+                                bgrect2.mouseOver = false
                             }
                             onClicked: {
                             ospopup.open()
@@ -276,7 +276,7 @@ ApplicationWindow {
                         }
                 
                         Rectangle {
-                            id: bgrect1
+                            id: bgrect2
                             anchors.fill: parent
                             color: accentColor
                             visible: mouseOver
