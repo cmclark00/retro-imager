@@ -68,11 +68,12 @@ ApplicationWindow {
 
             Image {
                 id: image
+                color: accentColor
                 source: "icons/logo_sxs_imager.png"
 
                 // Specify the maximum size of the image
-                width: window.width * 0.45
-                height: window.height / 3
+                width: window.width
+                height: window.height / 4
 
                 smooth: true
                 antialiasing: true
