@@ -26,7 +26,7 @@ ApplicationWindow {
     minimumWidth: imageWriter.isEmbeddedMode() ? -1 : 680
     minimumHeight: imageWriter.isEmbeddedMode() ? -1 : 450
 
-    title: qsTr("Retro Imager v0.1").arg(imageWriter.constantVersion())
+    title: qsTr("Retro Imager v0.1")
 
     FontLoader {id: roboto;      source: "fonts/Roboto-Regular.ttf"}
     FontLoader {id: robotoLight; source: "fonts/Roboto-Light.ttf"}
@@ -76,9 +76,6 @@ ApplicationWindow {
 
                 smooth: true
                 antialiasing: true
-
-                anchors {
-                    fill: parent
                 }
             }
         }
