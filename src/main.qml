@@ -62,18 +62,17 @@ ApplicationWindow {
 
         Rectangle {
             id: logoContainer
-            implicitHeight: window.height/4
+            width: parent.width
+            height: window.height / 4  // Set explicit height based on the window
 
             Image {
                 id: image
                 source: "icons/logo_sxs_imager.png"
-
-                // Specify the maximum size of the image
-                width: parent.width
-                height: parent.height
-                anchors.fill: parent
+                anchors.fill: parent  // This will make the image fill the parent completely
+                fillMode: Image.PreserveAspectFit  // Maintain the aspect ratio of the image
             }
         }
+
 
         Rectangle {
             color: backgroundColor
