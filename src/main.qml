@@ -69,19 +69,9 @@ ApplicationWindow {
                 source: "icons/logo_sxs_imager.png"
 
                 // Specify the maximum size of the image
-                width: window.width
-                height: window.height / 3
-
-                smooth: true
-                antialiasing: true
-
-                anchors {
-                    left: logoContainer.left
-                    top: logoContainer.top
-                    bottom: logoContainer.bottom
-                    topMargin: window.height
-                    bottomMargin: window.height
-                }
+                width: parent.width
+                height: parent.height
+                anchors.fill: parent
             }
         }
 
