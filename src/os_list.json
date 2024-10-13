@@ -81,7 +81,7 @@
     {
       "name": "muOS 2410.1 Banana for RG40XXV",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXV.",
-      "icon": "hhttps://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-V-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2132476961,
