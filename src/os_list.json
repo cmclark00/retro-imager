@@ -3,7 +3,7 @@
     {
       "name": "muOS 2410.1 Banana for RG35XX Plus",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX Plus.",
-      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-PLUS-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2151537628,
@@ -16,7 +16,7 @@
     {
       "name": "muOS 2410.1 Banana for RG28XX",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG28XX.",
-      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG28XX-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2158432397,
@@ -29,7 +29,7 @@
     {
       "name": "muOS 2410.1 Banana for RG35XXH",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXH.",
-      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-H-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2132124667,
@@ -42,7 +42,7 @@
     {
       "name": "muOS 2410.1 Banana for RG35XXSP",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXSP.",
-      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-SP-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2176694960,
@@ -55,7 +55,7 @@
     {
       "name": "muOS 2410.1 Banana for RG35XX24",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX24.",
-      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-2024-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2151137645,
@@ -68,7 +68,7 @@
     {
       "name": "muOS 2410.1 Banana for RG40XXH",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXH.",
-      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-H-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2132388103,
@@ -81,7 +81,7 @@
     {
       "name": "muOS 2410.1 Banana for RG40XXV",
       "description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXV.",
-      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png",
+      "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
       "url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-V-2410.1-BANANA-d1bae326.img.gz",
       "release_date": "2024-10-12",
       "image_download_size": 2132476961,
