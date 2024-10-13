@@ -71,8 +71,6 @@ ApplicationWindow {
                 source: "icons/logo_sxs_imager.png"
                 width: window.width * 1
                 height: window.height / 3
-                fillMode: Image.PreserveAspectFit
-                horizontalAlignment: Image.AlignLeft
                 smooth: true
                 antialiasing: true
             }
