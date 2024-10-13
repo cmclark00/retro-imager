@@ -60,23 +60,31 @@ ApplicationWindow {
         id: bg
         spacing: 0
 
+        
         Rectangle {
             id: logoContainer
+            color: accentColor
             implicitHeight: window.height/4
 
             Image {
                 id: image
                 source: "icons/logo_sxs_imager.png"
-                anchors.fill: parent
+                width: window.width * 1
+                height: window.height / 3
                 fillMode: Image.PreserveAspectFit
-                
-                onStatusChanged: {
-                    if (status == Image.Error) {
-                        console.log("Failed to load image:", source)
-                    }
+                horizontalAlignment: Image.AlignLeft
+                smooth: true
+                antialiasing: true
+
+                anchors {
+                    left: logoContainer.left
+                    leftMargin: 40
+                    top: logoContainer.top
+                    bottom: logoContainer.bottom
+                    topMargin: window.height / 25
+                    bottomMargin: window.height / 25
                 }
             }
-
         }
 
         Rectangle {
