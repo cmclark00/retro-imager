@@ -75,15 +75,6 @@ ApplicationWindow {
                 horizontalAlignment: Image.AlignLeft
                 smooth: true
                 antialiasing: true
-
-                anchors {
-                    left: logoContainer.left
-                    leftMargin: 40
-                    top: logoContainer.top
-                    bottom: logoContainer.bottom
-                    topMargin: window.height / 25
-                    bottomMargin: window.height / 25
-                }
             }
         }
 
