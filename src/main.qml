@@ -62,17 +62,22 @@ ApplicationWindow {
 
         Rectangle {
             id: logoContainer
-            width: parent.width
-            height: window.height / 4  // Set explicit height based on the window
+            implicitHeight: window.height/4
 
             Image {
                 id: image
                 source: "icons/logo_sxs_imager.png"
-                anchors.fill: parent  // This will make the image fill the parent completely
-                fillMode: Image.PreserveAspectFit  // Maintain the aspect ratio of the image
+                anchors.fill: parent
+                fillMode: Image.PreserveAspectFit
+                
+                onStatusChanged: {
+                    if (status == Image.Error) {
+                        console.log("Failed to load image:", source)
+                    }
+                }
             }
-        }
 
+        }
 
         Rectangle {
             color: backgroundColor
