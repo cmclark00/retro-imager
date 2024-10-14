@@ -2,7 +2,7 @@
 	"os_list": [{
 			"name": "muOS 2410.1 Banana for RG35XX Plus",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX Plus.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-PLUS-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2151537628,
@@ -15,7 +15,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG28XX",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG28XX.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG28XX-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2158432397,
@@ -28,7 +28,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG35XXH",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXH.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-H-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2132124667,
@@ -41,7 +41,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG35XXSP",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXSP.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-SP-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2176694960,
@@ -54,7 +54,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG35XX24",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX24.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-2024-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2151137645,
@@ -67,7 +67,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG40XXH",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXH.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-H-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2132388103,
@@ -80,7 +80,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG40XXV",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXV.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-V-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2132476961,
@@ -230,37 +230,37 @@
 		"devices": [{
 				"name": "Anbernic RG40XXH",
 				"tags": ["rg40xxh"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG40XX%20H.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG40XX%20H.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG40XXV",
 				"tags": ["rg40xxv"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG40XX%20V.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG40XX%20V.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XXH",
 				"tags": ["rg35xxh"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG35XX%20H.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20H.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XX Plus",
 				"tags": ["rg35xx_plus"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG35XX%20-%20PLUS.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20-%20PLUS.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XX SP",
 				"tags": ["rg35xx_sp"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG35XX%20SP.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20SP.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XX 2024",
 				"tags": ["rg35xx_2024"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG35XX%20-%202024.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20-%202024.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG28XX",
 				"tags": ["rg28xx"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG28XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG28XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG351P",
