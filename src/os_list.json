@@ -266,18 +266,15 @@
       },
       {
         "name": "Anbernic RG351P",
-        "tags": ["rg351p"],
-        "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG35XX%20-%20PLUS.png?raw=true"
+        "tags": ["rg351p"]
       },
       {
         "name": "Anbernic RG351M",
-        "tags": ["rg351m"],
-        "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG35XX%20-%20PLUS.png?raw=true"
+        "tags": ["rg351m"]
       },
       {
         "name": "Anbernic RG351V",
-        "tags": ["rg351v"],
-        "icon": "https://github.com/cmclark00/retro-imager/blob/boogaloo/src/icons/RG35XX%20-%20PLUS.png?raw=true"
+        "tags": ["rg351v"]
       },
       {
         "name": "Game Console R33S",
