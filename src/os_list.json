@@ -101,9 +101,9 @@
       "extract_size": 2197815296,
       "extract_sha256": "0bdf629ef90c33ce236dd3cf4fd991d24ac61d4b2f8546d09e602308459b2425",
       "devices": [
-        "rg351_p",
-        "rg351_m",
-        "rg351_v",
+        "rg351p",
+        "rg351m",
+        "rg351v",
         "r33s",
         "r35s",
         "r36s",
@@ -310,31 +310,27 @@
       },
       {
         "name": "Anbernic RG353P",
-        "tags": ["rg351v"]
+        "tags": ["rg353p"]
       },
       {
         "name": "Anbernic RG353M",
-        "tags": ["rg351v"]
+        "tags": ["rg353m"]
       },
       {
         "name": "Anbernic RG353V",
-        "tags": ["rg351v"]
+        "tags": ["rg353v"]
       },
       {
         "name": "Anbernic RG353VS",
-        "tags": ["rg351v"]
+        "tags": ["rg353vs"]
       },
       {
         "name": "Anbernic RG353PS",
-        "tags": ["rg351v"]
+        "tags": ["rg353ps"]
       },
       {
         "name": "Anbernic RG503",
         "tags": ["rg503"]
-      },
-      {
-        "name": "Anbernic RG351v",
-        "tags": ["rg351v"]
       },
       {
         "name": "Anbernic RG Arc-D",
@@ -350,7 +346,7 @@
       },
       {
         "name": "Powkiddy RGB10 Max 3",
-        "tags": ["rbg10_max_3"]
+        "tags": ["rgb10_max_3"]
       },
       {
         "name": "Powkiddy RGB30",
