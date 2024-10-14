@@ -4,20 +4,20 @@
 #              by Vlasis K. Barkas aka Red Wine red_wine@freemail.gr Sep 2006               
 ############################################################################################
 
-!define APP_NAME "Raspberry Pi Imager"
-!define COMP_NAME "Raspberry Pi Ltd"
+!define APP_NAME "Retro Imager"
+!define COMP_NAME "coreymclark"
 !define VERSION "@IMAGER_VERSION_STR@"
-!define INSTALLER_NAME "imager-${VERSION}.exe"
+!define INSTALLER_NAME "retro-imager-${VERSION}.exe"
 !define COPYRIGHT "Raspberry Pi Ltd"
-!define DESCRIPTION "Raspberry Pi Imager"
-!define MAIN_APP_EXE "rpi-imager.exe"
+!define DESCRIPTION "Retro Imager"
+!define MAIN_APP_EXE "retro-imager.exe"
 !define INSTALL_TYPE "SetShellVarContext current"
 !define REG_ROOT "HKCU"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
 !define UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 
 # Window to close if running
-!define EXE_TO_TERMINATE "rpi-imager.exe"
+!define EXE_TO_TERMINATE "retro-imager.exe"
 
 ######################################################################
 
@@ -38,7 +38,7 @@ OutFile "${INSTALLER_NAME}"
 BrandingText "${APP_NAME}"
 XPStyle on
 InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""
-InstallDir "$PROGRAMFILES\Raspberry Pi Imager"
+InstallDir "$PROGRAMFILES\Retro Imager"
 
 ######################################################################
 
@@ -89,7 +89,7 @@ InstallDir "$PROGRAMFILES\Raspberry Pi Imager"
 
 !ifdef REG_START_MENU
 !define MUI_STARTMENUPAGE_NODISABLE
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Raspberry Pi"
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Retro Imager"
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT "${REG_ROOT}"
 !define MUI_STARTMENUPAGE_REGISTRY_KEY "${UNINSTALL_PATH}"
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "${REG_START_MENU}"
@@ -256,8 +256,8 @@ File "deploy\libgcc_s_seh-1.dll"
 File "deploy\libstdc++-6.dll"
 File "deploy\libwinpthread-1.dll"
 File "deploy\license.txt"
-File "deploy\rpi-imager-cli.cmd"
-File "deploy\rpi-imager.exe"
+File "deploy\retro-imager-cli.cmd"
+File "deploy\retro-imager.exe"
 SetOutPath "$INSTDIR\generic"
 File "deploy\generic\qtuiotouchplugin.dll"
 SetOutPath "$INSTDIR\iconengines"
@@ -1699,11 +1699,11 @@ RmDir "$SMPROGRAMS\$SM_Folder"
 !endif
 
 !ifndef REG_START_MENU
-Delete "$SMPROGRAMS\Raspberry Pi\${APP_NAME}.lnk"
+Delete "$SMPROGRAMS\Retro Imager${APP_NAME}.lnk"
 !ifdef WEB_SITE
-Delete "$SMPROGRAMS\Raspberry Pi\${APP_NAME} Website.lnk"
+Delete "$SMPROGRAMS\Retro Imager\${APP_NAME} Website.lnk"
 !endif
-RmDir "$SMPROGRAMS\Raspberry Pi"
+RmDir "$SMPROGRAMS\Retro Imager"
 !endif
 
 DeleteRegKey ${REG_ROOT} "${REG_APP_PATH}"
@@ -1719,10 +1719,10 @@ DeleteRegKey SHCTX "Software\Classes\RPI_IMAGINGUTILITY"
 
 DeleteRegKey ${REG_ROOT} ""
 
-RMDir /r "$APPDATA\Raspberry Pi\Imager"
-RMDir "$APPDATA\Raspberry Pi"
-RMDir /r "$LOCALAPPDATA\Raspberry Pi\Imager"
-RMDir "$LOCALAPPDATA\Raspberry Pi"
+RMDir /r "$APPDATA\Retro Imager\Imager"
+RMDir "$APPDATA\Retro Imager"
+RMDir /r "$LOCALAPPDATA\Retro Imager\Imager"
+RMDir "$LOCALAPPDATA\Retro Imager"
 
 SectionEnd
 

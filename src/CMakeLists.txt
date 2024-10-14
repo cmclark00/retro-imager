@@ -8,10 +8,10 @@ OPTION (DRIVELIST_FILTER_SYSTEM_DRIVES "Filter System drives from displayed driv
 
 set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE STRING "Which macOS architectures to build for")
 
-project(rpi-imager LANGUAGES CXX C)
-set(IMAGER_VERSION_MAJOR 1)
-set(IMAGER_VERSION_MINOR 9)
-set(IMAGER_VERSION_PATCH 2)
+project(retro-imager LANGUAGES CXX C)
+set(IMAGER_VERSION_MAJOR 0)
+set(IMAGER_VERSION_MINOR 3)
+set(IMAGER_VERSION_PATCH 0)
 set(IMAGER_VERSION_STR "${IMAGER_VERSION_MAJOR}.${IMAGER_VERSION_MINOR}.${IMAGER_VERSION_PATCH}")
 set(IMAGER_VERSION_CSV "${IMAGER_VERSION_MAJOR},${IMAGER_VERSION_MINOR},${IMAGER_VERSION_PATCH},0")
 add_definitions(-DIMAGER_VERSION_STR="${IMAGER_VERSION_STR}")
@@ -384,12 +384,12 @@ if (WIN32)
         POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy
             "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.exe" "${CMAKE_BINARY_DIR}/dependencies/fat32format/fat32format.exe"
-            "${CMAKE_SOURCE_DIR}/../license.txt" "${CMAKE_SOURCE_DIR}/windows/rpi-imager-cli.cmd"
+            "${CMAKE_SOURCE_DIR}/../license.txt" "${CMAKE_SOURCE_DIR}/windows/retro-imager-cli.cmd"
             "${CMAKE_BINARY_DIR}/deploy")
 
     configure_file(
-        "${CMAKE_CURRENT_SOURCE_DIR}/windows/rpi-imager.nsi.in"
-        "${CMAKE_CURRENT_BINARY_DIR}/rpi-imager.nsi"
+        "${CMAKE_CURRENT_SOURCE_DIR}/windows/retro-imager.nsi.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/retro-imager.nsi"
         @ONLY)
 
     add_custom_command(TARGET ${PROJECT_NAME}
