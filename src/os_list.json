@@ -267,202 +267,162 @@
       {
         "name": "Anbernic RG351P",
         "tags": ["rg351p"]
-        
       },
       {
         "name": "Anbernic RG351M",
         "tags": ["rg351m"]
-        
       },
       {
         "name": "Anbernic RG351V",
         "tags": ["rg351v"]
-        
       },
       {
         "name": "Game Console R33S",
         "tags": ["r33s"]
-        
       },
       {
         "name": "Game Console R35S",
         "tags": ["r35s"]
-        
       },
       {
         "name": "Game Console R36S",
         "tags": ["r36s"]
-        
       },
       {
         "name": "ODROID Go Advance",
         "tags": ["oga"]
-        
       },
       {
         "name": "ODROID Go Super",
         "tags": ["ogs"]
-        
       },
       {
         "name": "MagicX XU10",
         "tags": ["xu10"]
-        
       },
       {
         "name": "Powkiddy V10",
         "tags": ["v10"]
-        
       },
       {
         "name": "Powkiddy RGB10",
         "tags": ["rgb10"]
-        
       },
       {
         "name": "Anbernic RG353P",
         "tags": ["rg351v"]
-        
       },
       {
         "name": "Anbernic RG353M",
         "tags": ["rg351v"]
-        
       },
       {
         "name": "Anbernic RG353V",
         "tags": ["rg351v"]
-        
       },
       {
         "name": "Anbernic RG353VS",
         "tags": ["rg351v"]
-        
       },
       {
         "name": "Anbernic RG353PS",
         "tags": ["rg351v"]
-        
       },
       {
         "name": "Anbernic RG503",
         "tags": ["rg503"]
-        
       },
       {
         "name": "Anbernic RG351v",
         "tags": ["rg351v"]
-        
       },
       {
         "name": "Anbernic RG Arc-D",
         "tags": ["rg_arc_d"]
-        
       },
       {
         "name": "Anbernic RG Arc-S",
         "tags": ["rg_arc_s"]
-        
       },
       {
         "name": "Powkiddy RK2023",
         "tags": ["rk2023"]
-        
       },
       {
         "name": "Powkiddy RGB10 Max 3",
         "tags": ["rbg10_max_3"]
-        
       },
       {
         "name": "Powkiddy RGB30",
         "tags": ["rgb30"]
-        
       },
       {
         "name": "Powkiddy RGB20SX",
         "tags": ["rgb20sx"]
-        
       },
       {
         "name": "Anbernic RG552",
         "tags": ["rg552"]
-        
       },
       {
         "name": "ODROID Go Ultra",
         "tags": ["ogu"]
-        
       },
       {
         "name": "Powkiddy RGB10 Max 3 Pro",
         "tags": ["rgb10_max_3_pro"]
-        
       },
       {
         "name": "ODROID N2",
         "tags": ["on2"]
-        
       },
       {
         "name": "ODROID N2 Plus",
         "tags": ["on2_plus"]
-        
       },
       {
         "name": "ODROID N2L",
         "tags": ["on2l"]
-        
       },
       {
         "name": "Gameforce Ace (default)",
         "tags": ["ace"]
-        
       },
       {
         "name": "Orange Pi 5",
         "tags": ["orange_pi_5"]
-        
       },
       {
         "name": "Orange Pi 5 Plus",
         "tags": ["orange_pi_5_plus"]
-        
       },
       {
         "name": "Radxa Rock 5a",
         "tags": ["radxa_rock_5a"]
-        
       },
       {
         "name": "Radxa Rock 5b",
         "tags": ["radxa_rock_5b"]
-        
       },
       {
         "name": "Radxa Rock 5b Plus",
         "tags": ["radxa_rock_5b_plus"]
-        
       },
       {
         "name": "Radxa Rock CM5",
         "tags": ["radxa_rock_cm5"]
-        
       },
       {
         "name": "Indiedroid Nova (Must set dtb in extlinuix.conf)",
         "tags": ["nova"]
-        
       },
       {
         "name": "Powkiddy X55",
         "tags": ["x55"]
-        
       },
       {
         "name": "MagicX XU Mini M",
         "tags": ["xu_mini_m"]
-        
       }
     ]
   }
