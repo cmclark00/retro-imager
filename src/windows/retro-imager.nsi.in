@@ -766,13 +766,13 @@ WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "URLInfoAbout" "${WEB_SITE}"
 !endif
 
 
-WriteRegStr SHCTX "Software\Classes\.zip\OpenWithProgIds" "RPI_IMAGINGUTILITY" ""
-WriteRegStr SHCTX "Software\Classes\.gz\OpenWithProgIds" "RPI_IMAGINGUTILITY" ""
-WriteRegStr SHCTX "Software\Classes\.xz\OpenWithProgIds" "RPI_IMAGINGUTILITY" ""
-WriteRegStr SHCTX "Software\Classes\.img\OpenWithProgIds" "RPI_IMAGINGUTILITY" ""
-WriteRegStr SHCTX "Software\Classes\.zstd\OpenWithProgIds" "RPI_IMAGINGUTILITY" ""
-WriteRegStr SHCTX "Software\Classes\RPI_IMAGINGUTILITY\shell\open" "FriendlyAppName" "Raspberry Pi Imager"
-WriteRegStr SHCTX "Software\Classes\RPI_IMAGINGUTILITY\shell\open\command" "" '"$INSTDIR\rpi-imager.exe" "%1"'
+WriteRegStr SHCTX "Software\Classes\.zip\OpenWithProgIds" "RETRO_IMAGINGUTILITY" ""
+WriteRegStr SHCTX "Software\Classes\.gz\OpenWithProgIds" "RETRO_IMAGINGUTILITY" ""
+WriteRegStr SHCTX "Software\Classes\.xz\OpenWithProgIds" "RETRO_IMAGINGUTILITY" ""
+WriteRegStr SHCTX "Software\Classes\.img\OpenWithProgIds" "RETRO_IMAGINGUTILITY" ""
+WriteRegStr SHCTX "Software\Classes\.zstd\OpenWithProgIds" "RETRO_IMAGINGUTILITY" ""
+WriteRegStr SHCTX "Software\Classes\RETRO_IMAGINGUTILITY\shell\open" "FriendlyAppName" "Retro Imager"
+WriteRegStr SHCTX "Software\Classes\RETRO_IMAGINGUTILITY\shell\open\command" "" '"$INSTDIR\retro-imager.exe" "%1"'
 
 SectionEnd
 
@@ -805,8 +805,8 @@ Delete "$INSTDIR\Qt5Widgets.dll"
 Delete "$INSTDIR\Qt5WinExtras.dll"
 # Old name
 Delete "$INSTDIR\imagingutility.exe"
-Delete "$INSTDIR\rpi-imager.exe"
-Delete "$INSTDIR\rpi-imager-cli.cmd"
+Delete "$INSTDIR\retro-imager.exe"
+Delete "$INSTDIR\retro-imager-cli.cmd"
 Delete "$INSTDIR\styles\qwindowsvistastyle.dll"
 Delete "$INSTDIR\QtQuick.2\plugins.qmltypes"
 Delete "$INSTDIR\QtQuick.2\qmldir"
@@ -1195,8 +1195,8 @@ Delete "$INSTDIR\Qt6Svg.dll"
 Delete "$INSTDIR\Qt6VirtualKeyboard.dll"
 Delete "$INSTDIR\Qt6Widgets.dll"
 Delete "$INSTDIR\libgcc_s_seh-1.dll"
-Delete "$INSTDIR\rpi-imager-cli.cmd"
-Delete "$INSTDIR\rpi-imager.exe"
+Delete "$INSTDIR\retro-imager-cli.cmd"
+Delete "$INSTDIR\retro-imager.exe"
 Delete "$INSTDIR\generic\qtuiotouchplugin.dll"
 Delete "$INSTDIR\iconengines\qsvgicon.dll"
 Delete "$INSTDIR\imageformats\qgif.dll"
@@ -1710,12 +1710,12 @@ DeleteRegKey ${REG_ROOT} "${REG_APP_PATH}"
 DeleteRegKey ${REG_ROOT} "${UNINSTALL_PATH}"
 
 # File associations
-DeleteRegValue SHCTX "Software\Classes\.zip\OpenWithProgIds" "RPI_IMAGINGUTILITY"
-DeleteRegValue SHCTX "Software\Classes\.gz\OpenWithProgIds" "RPI_IMAGINGUTILITY"
-DeleteRegValue SHCTX "Software\Classes\.xz\OpenWithProgIds" "RPI_IMAGINGUTILITY"
-DeleteRegValue SHCTX "Software\Classes\.img\OpenWithProgIds" "RPI_IMAGINGUTILITY"
-DeleteRegValue SHCTX "Software\Classes\.zstd\OpenWithProgIds" "RPI_IMAGINGUTILITY"
-DeleteRegKey SHCTX "Software\Classes\RPI_IMAGINGUTILITY"
+DeleteRegValue SHCTX "Software\Classes\.zip\OpenWithProgIds" "RETRO_IMAGINGUTILITY"
+DeleteRegValue SHCTX "Software\Classes\.gz\OpenWithProgIds" "RETRO_IMAGINGUTILITY"
+DeleteRegValue SHCTX "Software\Classes\.xz\OpenWithProgIds" "RETRO_IMAGINGUTILITY"
+DeleteRegValue SHCTX "Software\Classes\.img\OpenWithProgIds" "RETRO_IMAGINGUTILITY"
+DeleteRegValue SHCTX "Software\Classes\.zstd\OpenWithProgIds" "RETRO_IMAGINGUTILITY"
+DeleteRegKey SHCTX "Software\Classes\RETRO_IMAGINGUTILITY"
 
 DeleteRegKey ${REG_ROOT} ""
 
