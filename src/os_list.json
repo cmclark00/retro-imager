@@ -1,5 +1,6 @@
 {
-	"os_list": [{
+	"os_list": [
+		{
 			"name": "muOS 2410.1 Banana for RG35XX Plus",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX Plus.",
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
