@@ -132,7 +132,7 @@
       "name": "ROCKNIX 20240815 for Rockchip RK3566 devices",
       "description": "ROCKNIX 20240815 firmware optimized for Rockchip RK3566 devices.",
       "icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
-      "url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-RK3399.aarch64-20240815.img.gz",
+      "url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-RK3566.aarch64-20240815.img.gz",
       "release_date": "2024-08-15",
       "image_download_size": 1282393570,
       "extract_size": 2198863872,
