@@ -1,8 +1,8 @@
 version: 1
 
 project:
-  name: org.raspberrypi.rpi-imager
-  version: 1.9.2
+  name: org.coreymclark.retro-imager
+  version: 0.3.0
 
 build:
   cmake:

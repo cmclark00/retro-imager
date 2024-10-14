@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-Name=Raspberry Pi Imager
+Name=Retro Imager
 Name[zh_CN]=树莓派启动盘制作工具
-Comment=Raspberry Pi Imager
+Comment=Retro Imager
 Comment[zh_CN]=树莓派启动盘制作工具
 Icon=rpi-imager
-Exec=rpi-imager %F
+Exec=retro-imager %F
 Categories=Utility
 StartupNotify=false
