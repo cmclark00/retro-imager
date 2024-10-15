@@ -1,0 +1,43 @@
+name: Build Retro-Imager for ARM64 Macs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build on macOS ARM64
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Build Retro-Imager
+        run: |
+          npm run build
+
+      - name: Archive Build Artifacts
+        if: success()
+        run: |
+          mkdir -p build_artifacts
+          tar -czvf build_artifacts/retro-imager-arm64-mac.tar.gz dist/
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: retro-imager-arm64-mac
+          path: build_artifacts/retro-imager-arm64-mac.tar.gz
