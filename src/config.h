@@ -8,7 +8,7 @@
 
 
 /* Repository URL */
-#define OSLIST_URL                        "https://github.com/cmclark00/retro-imager/blob/b62868db9b28fb1805187e1bd53d0152a87311a6/src/os_list.json"
+#define OSLIST_URL                        "https://raw.githubusercontent.com/cmclark00/retro-imager/refs/heads/dev/src/os_list.json"
 
 /* Time synchronization URL (only used on eglfs QPA platform, URL must be HTTP) */
 #define TIME_URL                          "http://downloads.raspberrypi.org/os_list_imagingutility_v4.json?time_synchronization"
