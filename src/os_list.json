@@ -32,9 +32,9 @@
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-H-2410.1-BANANA-a10951c4.img.gz",
 			"release_date": "2024-10-12",
-			"image_download_size": 2132124667,
+			"image_download_size": 2118435484,
 			"extract_size": 4504682496,
-			"extract_sha256": "d0d54809fcc128e43a42a2e13bfcb3427be97e05d0776263612ccce08677ea08",
+			"extract_sha256": "a84a1386de3b046aea05c75a4ccc8da0fbc2ee42f89b7b78a720cf657f45d3d2",
 			"devices": [
 				"rg35xxh"
 			]
