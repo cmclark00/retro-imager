@@ -1,4 +1,4 @@
-# Raspberry Pi Imager
+# Retro Imager
 
 Raspberry Pi Imaging Utility
 
