@@ -17,24 +17,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install Dependencies
+      - name: Install Dependencies (example)
         run: |
-          npm install
+          brew install cmake # Replace with actual dependencies if needed
 
-      - name: Build Retro-Imager
+      - name: Configure and Build Retro-Imager
         run: |
-          npm run build
+          mkdir -p build
+          cd build
+          cmake ..
+          make
 
       - name: Archive Build Artifacts
         if: success()
         run: |
           mkdir -p build_artifacts
-          tar -czvf build_artifacts/retro-imager-arm64-mac.tar.gz dist/
+          tar -czvf build_artifacts/retro-imager-arm64-mac.tar.gz build/
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
