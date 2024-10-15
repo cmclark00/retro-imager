@@ -22,13 +22,18 @@ jobs:
           brew update
           brew install cmake qt@6
 
+      - name: Verify Qt Installation Path
+        run: |
+          echo "Qt is installed at: $(brew --prefix qt@6)"
+          ls -la $(brew --prefix qt@6)
+
       - name: Configure and Build Retro-Imager
         env:
           CMAKE_PREFIX_PATH: "$(brew --prefix qt@6)"
         run: |
           mkdir -p build
           cd build
-          cmake ../src
+          cmake -DCMAKE_PREFIX_PATH=$(brew --prefix qt@6) ../src
           make
 
       - name: Archive Build Artifacts
