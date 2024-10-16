@@ -64,18 +64,21 @@ ApplicationWindow {
         Rectangle {
             id: logoContainer
             color: accentColor
-            implicitHeight: window.height/4
+            implicitHeight: window.height / 4
+            width: parent.width // Ensure the container is as wide as its parent
 
             Image {
                 id: image
                 source: "icons/banner.png"
-                width: window.width * 1
-                height: window.height / 3
+                anchors.fill: parent // Ensure the image fills the container
+                anchors.margins: 10  // Optional, for padding around the image
+
+                fillMode: Image.PreserveAspectFit  // Maintain aspect ratio without stretching
                 smooth: true
                 antialiasing: true
-                fillMode: Image.PreserveAspectFit
             }
         }
+
 
         Rectangle {
             color: backgroundColor
