@@ -540,11 +540,35 @@ ApplicationWindow {
             height: 1
         }
 
+        // Function to load JSON data
+        function loadJSON() {
+            var request = new XMLHttpRequest();
+            request.open("GET", "os_list.json", false);  // Synchronous request
+            request.send();
+
+            if (request.status === 200) {
+                return JSON.parse(request.responseText);
+            } else {
+                console.error("Failed to load JSON: " + request.status);
+                return null;
+            }
+        }
+
+        Component.onCompleted: {
+            jsonData = loadJSON();
+            if (jsonData) {
+                loadDevices(); // Call loadDevices() after JSON is loaded
+            }
+        }
+
+        property var jsonData: {}  // Empty object to hold the loaded JSON
+
         ListView {
             id: hwlist
             clip: true
             model: ListModel {
                 id: deviceModel
+                // Default element if you want to show "All" as a choice
                 ListElement {
                     name: qsTr("[ All ]")
                     tags: "[]"
@@ -555,14 +579,15 @@ ApplicationWindow {
             }
 
             // Function to populate the model
-            Component.onCompleted: {
-                loadDevices();
-            }
-
             function loadDevices() {
                 deviceModel.clear();  // Clear existing entries if any
 
-                // Sample structure for accessing JSON data. Assuming jsonData is your loaded JSON.
+                if (!jsonData || !jsonData.imager || !jsonData.imager.manufacturers) {
+                    console.error("Invalid JSON structure.");
+                    return;
+                }
+
+                // Sample structure for accessing JSON data.
                 var manufacturers = jsonData.imager.manufacturers;
 
                 // Iterate through each manufacturer and add its devices
@@ -582,7 +607,7 @@ ApplicationWindow {
 
             currentIndex: -1
             delegate: hwdelegate
-            anchors.top: hwpopup_title_separator.bottom
+            anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom
@@ -603,7 +628,6 @@ ApplicationWindow {
             Keys.onEnterPressed: Keys.onSpacePressed(event)
             Keys.onReturnPressed: Keys.onSpacePressed(event)
         }
-    }
 
     /*
       Popup for OS selection
