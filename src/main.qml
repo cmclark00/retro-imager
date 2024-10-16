@@ -73,6 +73,7 @@ ApplicationWindow {
                 height: window.height / 3
                 smooth: true
                 antialiasing: true
+                fillMode: Image.PreserveAspectFit
             }
         }
 
