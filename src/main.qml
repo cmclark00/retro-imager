@@ -502,7 +502,7 @@ ApplicationWindow {
             width: parent.width
 
             Text {
-                text: qsTr("Raspberry Pi Device")
+                text: qsTr("Retro Handheld Device")
                 horizontalAlignment: Text.AlignHCenter
                 anchors.fill: parent
                 anchors.topMargin: 10
@@ -553,6 +553,33 @@ ApplicationWindow {
                     matching_type: "exclusive"
                 }
             }
+
+            // Function to populate the model
+            Component.onCompleted: {
+                loadDevices();
+            }
+
+            function loadDevices() {
+                deviceModel.clear();  // Clear existing entries if any
+
+                // Sample structure for accessing JSON data. Assuming jsonData is your loaded JSON.
+                var manufacturers = jsonData.imager.manufacturers;
+
+                // Iterate through each manufacturer and add its devices
+                for (var i = 0; i < manufacturers.length; i++) {
+                    var manufacturer = manufacturers[i];
+                    for (var j = 0; j < manufacturer.devices.length; j++) {
+                        var device = manufacturer.devices[j];
+                        deviceModel.append({
+                            "name": device.name,
+                            "tags": device.tags,
+                            "icon": device.icon,
+                            "description": manufacturer.name // Use manufacturer name if needed
+                        });
+                    }
+                }
+            }
+
             currentIndex: -1
             delegate: hwdelegate
             anchors.top: hwpopup_title_separator.bottom
