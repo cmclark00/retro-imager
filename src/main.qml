@@ -68,7 +68,7 @@ ApplicationWindow {
 
             Image {
                 id: image
-                source: "icons/logo_sxs_imager.png"
+                source: "icons/banner.png"
                 width: window.width * 1
                 height: window.height / 3
                 smooth: true

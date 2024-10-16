@@ -2,7 +2,7 @@ version: 1
 
 project:
   name: org.coreymclark.retro-imager
-  version: 0.3.0
+  version: 0.5.0
 
 build:
   cmake:
@@ -12,7 +12,7 @@ build:
       Qt6_ROOT: /home/corey/Qt/6.7.3/gcc_64
       Qt6_DIR: /home/corey/Qt/6.7.3/gcc_64/lib/cmake/Qt6
   environment:
-    BUILD_TYPE: MinSizeRel
+    BUILD_TYPE: Release
 
 appimage:
   linuxdeploy:
