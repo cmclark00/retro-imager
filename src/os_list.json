@@ -92,14 +92,14 @@
 			]
 		},
 		{
-			"name": "ROCKNIX 20240815 for Rockchip RK3326 devices",
-			"description": "ROCKNIX 20240815 firmware optimized for Rockchip RK3326 devices.",
+			"name": "ROCKNIX 20241120 for Rockchip RK3326 devices, A image.",
+			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3326 devices.",
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
-			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-RK3326.aarch64-20240815.img.gz",
-			"release_date": "2024-08-15",
-			"image_download_size": 1171847190,
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3326.aarch64-20241120-a.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1348717111,
 			"extract_size": 2197815296,
-			"extract_sha256": "0bdf629ef90c33ce236dd3cf4fd991d24ac61d4b2f8546d09e602308459b2425",
+			"extract_sha256": "8cc28cca1d4d88464cf156691a540111385c5b94f30aa067456cc80fcd12b747",
 			"devices": [
 				"rg351p",
 				"rg351m",
@@ -111,32 +111,45 @@
 				"ogs",
 				"xu10",
 				"v10",
-				"rgb10",
-				"xu_mini_m"
+				"rgb10"
 			]
 		},
 		{
-			"name": "ROCKNIX 20240815 for Rockchip RK3399 devices",
-			"description": "ROCKNIX 20240815 firmware optimized for Rockchip RK3399 devices.",
+			"name": "ROCKNIX 20241120 for Rockchip RK3326 devices, B image.",
+			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3326 devices.",
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
-			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-RK3399.aarch64-20240815.img.gz",
-			"release_date": "2024-08-15",
-			"image_download_size": 1195501171,
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3326.aarch64-20241120-b.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1348619756,
+			"extract_size": 2197815296,
+			"extract_sha256": "e43ed5ea9c8c93408a180e57409e9a07d7594ecb1ffe46f21024655f46ea9050",
+			"devices": [
+				"xu_mini_m",
+				"rgb10x"
+			]
+		},
+		{
+			"name": "ROCKNIX 20241120 for Rockchip RK3399 devices",
+			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3399 devices.",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3399.aarch64-20241120.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1288581465,
 			"extract_size": 2198863872,
-			"extract_sha256": "8f77e5d80305d93f8e9e21ff7a9191d0f858caae72df18e9a028a9ea17f13416",
+			"extract_sha256": "53091696a540d693d99d515524816825a057823c0fe1f91a0b5e4837baeb24b9",
 			"devices": [
 				"rg552"
 			]
 		},
 		{
-			"name": "ROCKNIX 20240815 for Rockchip RK3566 devices",
-			"description": "ROCKNIX 20240815 firmware optimized for Rockchip RK3566 devices.",
+			"name": "ROCKNIX 20241120 for Rockchip RK3566 devices",
+			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3566 devices.",
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
-			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-RK3566.aarch64-20240815.img.gz",
-			"release_date": "2024-08-15",
-			"image_download_size": 1282393570,
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3566.aarch64-20241120-Generic.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1391749865,
 			"extract_size": 2198863872,
-			"extract_sha256": "c0ae2048a325f54261fba3d052fbb3c26bf11f522241f89e8dc7057ef31e2ef5",
+			"extract_sha256": "4917f090e9364f47de5cf8663c0741eb79b8236c4b455a5ae4d3c8889744de27",
 			"devices": [
 				"rg353p",
 				"rg353m",
@@ -153,27 +166,27 @@
 			]
 		},
 		{
-			"name": "ROCKNIX 20240815 for Powkiddy X55 devices",
-			"description": "ROCKNIX 20240815 firmware optimized for Powkiddy X55 devices.",
+			"name": "ROCKNIX 20241120 for Powkiddy X55 devices",
+			"description": "ROCKNIX 20241120 firmware optimized for Powkiddy X55 devices.",
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
-			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-RK3566-X55.aarch64-20240815.img.gz",
-			"release_date": "2024-08-15",
-			"image_download_size": 1282079397,
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3566.aarch64-20241120-Powkiddy_x55.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1391396234,
 			"extract_size": 2198863872,
-			"extract_sha256": "1883848d6b8f6011c15f1aa54f44e5898eb7c89d4f6abcb229b13dd67c9928e8",
+			"extract_sha256": "35391e0a49de413a2672893a07ed6ca116f90746baef620eebf8d3ab7b2ad5f7",
 			"devices": [
 				"x55"
 			]
 		},
 		{
-			"name": "ROCKNIX 20240815 for Hardkernel ODROID Go Ultra and Powkiddy RGB10 Max 3 Pro devices",
-			"description": "ROCKNIX 20240815 firmware optimized for ODROID Go Ultra and RGB10 Max 3 Pro devices.",
+			"name": "ROCKNIX 20241120 for Hardkernel ODROID Go Ultra and Powkiddy RGB10 Max 3 Pro devices",
+			"description": "ROCKNIX 20241120 firmware optimized for ODROID Go Ultra and RGB10 Max 3 Pro devices.",
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
-			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-S922X.aarch64-20240815-Odroid_GOU.img.gz",
-			"release_date": "2024-08-15",
-			"image_download_size": 1257600535,
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-S922X.aarch64-20241120.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1416924259,
 			"extract_size": 2185232384,
-			"extract_sha256": "ddf4cb558846ab0c826b445bc55da908530fb2f7fbfc0ef070215fe7e0223c65",
+			"extract_sha256": "86cd0a48d541e3e68582107748e2f77656c153d11f6efd14563fb65a0f9c5076",
 			"devices": [
 				"ogu",
 				"rgb10_max_3_pro"
@@ -207,14 +220,14 @@
 			]
 		},
 		{
-			"name": "ROCKNIX 20240815 for Rockchip RK3588 devices",
-			"description": "ROCKNIX 20240815 firmware optimized for Rockchip RK3588 devices.",
+			"name": "ROCKNIX 20241120 for Rockchip RK3588 devices",
+			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3588 devices.",
 			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
-			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-RK3588.aarch64-20240815.img.gz",
-			"release_date": "2024-08-15",
-			"image_download_size": 1313142011,
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3588.aarch64-20241120.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1451047021,
 			"extract_size": 2198863872,
-			"extract_sha256": "380180b7d8279b5fe0843e11935f27e11053749e084e578faa7ee7d4d4cce0b5",
+			"extract_sha256": "ec81027b7d9b757f09ccd78ce38c6993009e66ddd4b7e1a1206dc104ad739754",
 			"devices": [
 				"ace",
 				"orange_pi_5",
@@ -224,6 +237,20 @@
 				"radxa_rock_5b_plus",
 				"radxa_rock_cm5",
 				"nova"
+			]
+		},
+		{
+			"name": "ROCKNIX 20241120 for Retroid  Pocket Mini and Retroid Pocket 5 devices",
+			"description": "ROCKNIX 20241120 firmware optimized for Snapdragon 865 devices.",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-SD865.aarch64-20241120.img.gz",
+			"release_date": "2024-11-20",
+			"image_download_size": 1404994449,
+			"extract_size": 2198863872,
+			"extract_sha256": "82f9336c27c9b733322e7e9f685bc1e98aa4eedb0c17f9ae297edb983ada6f39",
+			"devices": [
+				"rpmini",
+				"rp5"
 			]
 		}
 	],
@@ -456,6 +483,16 @@
 			{
 				"name": "MagicX XU Mini M",
 				"tags": ["xu_mini_m"],
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+			},
+			{
+				"name": "Retroid Pocket Mini",
+				"tags": ["rpmini"],
+				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+			},
+			{
+				"name": "Retroid Pocket 5",
+				"tags": ["rp5"],
 				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
 			}
 		]
