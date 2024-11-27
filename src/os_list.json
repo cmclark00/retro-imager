@@ -3,7 +3,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG35XX Plus",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX Plus.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-PLUS-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2151537628,
@@ -16,7 +16,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG28XX",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG28XX.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG28XX-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2158432397,
@@ -29,7 +29,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG35XXH",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXH.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-H-2410.1-BANANA-a10951c4.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2118435484,
@@ -42,7 +42,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG35XXSP",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XXSP.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-SP-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2176694960,
@@ -55,7 +55,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG35XX24",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG35XX24.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG35XX-2024-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2151137645,
@@ -68,7 +68,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG40XXH",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXH.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-H-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2132388103,
@@ -81,7 +81,7 @@
 		{
 			"name": "muOS 2410.1 Banana for RG40XXV",
 			"description": "muOS 2410.1 Banana firmware optimized for Anbernic RG40XXV.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/logo.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/logo.png?raw=true",
 			"url": "https://dl.muos.dev/RELEASE/2410.1/muOS-RG40XX-V-2410.1-BANANA-d1bae326.img.gz",
 			"release_date": "2024-10-12",
 			"image_download_size": 2132476961,
@@ -94,7 +94,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Rockchip RK3326 devices, A image.",
 			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3326 devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3326.aarch64-20241120-a.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1348717111,
@@ -117,7 +117,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Rockchip RK3326 devices, B image.",
 			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3326 devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3326.aarch64-20241120-b.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1348619756,
@@ -131,7 +131,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Rockchip RK3399 devices",
 			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3399 devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3399.aarch64-20241120.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1288581465,
@@ -144,7 +144,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Rockchip RK3566 devices",
 			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3566 devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3566.aarch64-20241120-Generic.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1391749865,
@@ -168,7 +168,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Powkiddy X55 devices",
 			"description": "ROCKNIX 20241120 firmware optimized for Powkiddy X55 devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3566.aarch64-20241120-Powkiddy_x55.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1391396234,
@@ -181,7 +181,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Hardkernel ODROID Go Ultra and Powkiddy RGB10 Max 3 Pro devices",
 			"description": "ROCKNIX 20241120 firmware optimized for ODROID Go Ultra and RGB10 Max 3 Pro devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-S922X.aarch64-20241120.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1416924259,
@@ -195,7 +195,7 @@
 		{
 			"name": "ROCKNIX 20240815 for Hardkernel ODROID N2/N2+ devices",
 			"description": "ROCKNIX 20240815 firmware optimized for Hardkernel ODROID N2/N2+ devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-S922X.aarch64-20240815-Odroid_N2.img.gz",
 			"release_date": "2024-08-15",
 			"image_download_size": 1249723275,
@@ -209,7 +209,7 @@
 		{
 			"name": "ROCKNIX 20240815 for Hardkernel ODROID N2L devices",
 			"description": "ROCKNIX 20240815 firmware optimized for Hardkernel ODROID N2L devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20240815/ROCKNIX-S922X.aarch64-20240815-Odroid_N2L.img.gz",
 			"release_date": "2024-08-15",
 			"image_download_size": 1249707786,
@@ -222,7 +222,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Rockchip RK3588 devices",
 			"description": "ROCKNIX 20241120 firmware optimized for Rockchip RK3588 devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-RK3588.aarch64-20241120.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1451047021,
@@ -242,7 +242,7 @@
 		{
 			"name": "ROCKNIX 20241120 for Retroid  Pocket Mini and Retroid Pocket 5 devices",
 			"description": "ROCKNIX 20241120 firmware optimized for Snapdragon 865 devices.",
-			"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/rocknix.png?raw=true",
+			"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/rocknix.png?raw=true",
 			"url": "https://github.com/ROCKNIX/distribution/releases/download/20241120/ROCKNIX-SD865.aarch64-20241120.img.gz",
 			"release_date": "2024-11-20",
 			"image_download_size": 1404994449,
@@ -258,242 +258,242 @@
 		"devices": [{
 				"name": "Anbernic RG40XXH",
 				"tags": ["rg40xxh"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG40XX%20H.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG40XX%20H.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG40XXV",
 				"tags": ["rg40xxv"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG40XX%20V.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG40XX%20V.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XXH",
 				"tags": ["rg35xxh"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20H.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX%20H.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XX Plus",
 				"tags": ["rg35xx_plus"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20-%20PLUS.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX%20-%20PLUS.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XX SP",
 				"tags": ["rg35xx_sp"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20SP.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX%20SP.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG35XX 2024",
 				"tags": ["rg35xx_2024"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX%20-%202024.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX%20-%202024.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG28XX",
 				"tags": ["rg28xx"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG28XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG28XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG351P",
 				"tags": ["rg351p"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG351M",
 				"tags": ["rg351m"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG351V",
 				"tags": ["rg351v"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Game Console R33S",
 				"tags": ["r33s"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Game Console R35S",
 				"tags": ["r35s"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Game Console R36S",
 				"tags": ["r36s"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "ODROID Go Advance",
 				"tags": ["oga"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "ODROID Go Super",
 				"tags": ["ogs"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "MagicX XU10",
 				"tags": ["xu10"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy V10",
 				"tags": ["v10"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy RGB10",
 				"tags": ["rgb10"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG353P",
 				"tags": ["rg353p"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG353M",
 				"tags": ["rg353m"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG353V",
 				"tags": ["rg353v"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG353VS",
 				"tags": ["rg353vs"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG353PS",
 				"tags": ["rg353ps"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG503",
 				"tags": ["rg503"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG Arc-D",
 				"tags": ["rg_arc_d"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG Arc-S",
 				"tags": ["rg_arc_s"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy RK2023",
 				"tags": ["rk2023"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy RGB10 Max 3",
 				"tags": ["rgb10_max_3"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy RGB30",
 				"tags": ["rgb30"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy RGB20SX",
 				"tags": ["rgb20sx"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Anbernic RG552",
 				"tags": ["rg552"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "ODROID Go Ultra",
 				"tags": ["ogu"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy RGB10 Max 3 Pro",
 				"tags": ["rgb10_max_3_pro"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "ODROID N2",
 				"tags": ["on2"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "ODROID N2 Plus",
 				"tags": ["on2_plus"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "ODROID N2L",
 				"tags": ["on2l"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Gameforce Ace (default)",
 				"tags": ["ace"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Orange Pi 5",
 				"tags": ["orange_pi_5"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Orange Pi 5 Plus",
 				"tags": ["orange_pi_5_plus"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Radxa Rock 5a",
 				"tags": ["radxa_rock_5a"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Radxa Rock 5b",
 				"tags": ["radxa_rock_5b"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Radxa Rock 5b Plus",
 				"tags": ["radxa_rock_5b_plus"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Radxa Rock CM5",
 				"tags": ["radxa_rock_cm5"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Indiedroid Nova (Must set dtb in extlinuix.conf)",
 				"tags": ["nova"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Powkiddy X55",
 				"tags": ["x55"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "MagicX XU Mini M",
 				"tags": ["xu_mini_m"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Retroid Pocket Mini",
 				"tags": ["rpmini"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			},
 			{
 				"name": "Retroid Pocket 5",
 				"tags": ["rp5"],
-				"icon": "https://github.com/cmclark00/retro-imager/blob/dev/src/icons/RG35XX.png?raw=true"
+				"icon": "https://github.com/cmclark00/retro-imager/blob/fix/src/icons/RG35XX.png?raw=true"
 			}
 		]
 	}
