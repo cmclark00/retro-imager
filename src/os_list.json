@@ -255,10 +255,10 @@
 		}
 	],
 	"imager": {
-		"devices": [
+		"manuafcturers": [
 			{
 				"manufacturer": "Anbernic",
-					"devices": [
+					"productList": [
 						{
 							"name": "Anbernic RG40XXH",
 							"tags": ["rg40xxh"],
@@ -358,7 +358,7 @@
 			},
 			{
 				"manufacturer": "Unbranded",
-					"devices": [
+					"productList": [
 						{
 							"name": "Game Console R33S",
 							"tags": ["r33s"],
@@ -378,7 +378,7 @@
 			},
 			{
 				"manufacturer": "ODROID",
-					"devices": [
+					"productList": [
 						{
 							"name": "ODROID Go Advance",
 							"tags": ["oga"],
@@ -413,7 +413,7 @@
 			},
 			{
 				"manufacturer": "MagicX",
-					"devices": [
+					"productList": [
 						{
 							"name": "MagicX XU10",
 							"tags": ["xu10"],
@@ -428,7 +428,7 @@
 			},
 			{
 				"manufacturer": "Powkiddy",
-					"devices": [
+					"productList": [
 						{
 							"name": "Powkiddy V10",
 							"tags": ["v10"],
@@ -473,7 +473,7 @@
 			},
 			{
 				"manufacturer": "Gameforce",
-					"devices": [
+					"productList": [
 						{
 							"name": "Gameforce Ace (default)",
 							"tags": ["ace"],
@@ -483,7 +483,7 @@
 			},
 			{
 				"manufacturer": "Orange Pi",
-					"devices": [
+					"productList": [
 						{
 							"name": "Orange Pi 5",
 							"tags": ["orange_pi_5"],
@@ -498,7 +498,7 @@
 			},
 			{
 				"manufacturer": "Radxa",
-					"devices": [
+					"productList": [
 						{
 							"name": "Radxa Rock 5a",
 							"tags": ["radxa_rock_5a"],
@@ -523,7 +523,7 @@
 			},
 			{
 				"manufacturer": "Indiedroid",
-					"devices": [
+					"productList": [
 						{
 							"name": "Indiedroid Nova (Must set dtb in extlinuix.conf)",
 							"tags": ["nova"],
@@ -533,7 +533,7 @@
 			},
 			{
 				"manufacturer": "Retroid",
-					"devices": [
+					"productList": [
 						{
 							"name": "Retroid Pocket Mini",
 							"tags": ["rpmini"],
