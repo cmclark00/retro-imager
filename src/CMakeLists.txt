@@ -395,9 +395,9 @@ if (WIN32)
     add_custom_command(TARGET ${PROJECT_NAME}
         POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy
-            "C:/Qt/Tools/mingw1310_64/bin/libgcc_s_seh-1.dll"
-            "C:/Qt/Tools/mingw1310_64/bin/libstdc++-6.dll"
-            "C:/Qt/Tools/mingw1310_64/bin/libwinpthread-1.dll"
+            "${MINGW64_ROOT}/bin/libgcc_s_seh-1.dll"
+            "${MINGW64_ROOT}/bin/libstdc++-6.dll"
+            "${MINGW64_ROOT}/bin/libwinpthread-1.dll"
             "${CMAKE_BINARY_DIR}/deploy")
 
     add_custom_command(TARGET ${PROJECT_NAME}
