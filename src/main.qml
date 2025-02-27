@@ -11,7 +11,7 @@ import QtQuick.Controls.Material 2.2
 import "qmlcomponents"
 
 ApplicationWindow {
-        // Define the colors
+    // Define the colors
     property color beigeColor: "#c4bebb"
     property color maroonColor: "#800000"
     property color yellowColor: "#fcad01"
@@ -138,8 +138,8 @@ ApplicationWindow {
                                 bgrect.mouseOver = false
                             }
                             onClicked: {
-                            hwpopup.open()
-                            hwlist.forceActiveFocus()
+                                hwpopup.open()
+                                hwlist.forceActiveFocus()
                             }
                         }
                         Rectangle {
@@ -195,8 +195,8 @@ ApplicationWindow {
                                 bgrect1.mouseOver = false
                             }
                             onClicked: {
-                            ospopup.open()
-                            osswipeview.currentItem.forceActiveFocus()
+                                ospopup.open()
+                                osswipeview.currentItem.forceActiveFocus()
                             }
                         }
                 
@@ -254,10 +254,10 @@ ApplicationWindow {
                                 bgrect2.mouseOver = false
                             }
                             onClicked: {
-                            imageWriter.startDriveListPolling()
-                            dstpopup.open()
-                            dstlist.forceActiveFocus()
-                        }
+                                imageWriter.startDriveListPolling()
+                                dstpopup.open()
+                                dstlist.forceActiveFocus()
+                            }
                         }
                 
                         Rectangle {
@@ -479,6 +479,8 @@ ApplicationWindow {
         }
     }
 
+    // Popup for hardware device selection with nested structure
+    // Updated hwpopup definition
     Popup {
         id: hwpopup
         x: 50
@@ -488,6 +490,21 @@ ApplicationWindow {
         padding: 0
         closePolicy: Popup.CloseOnEscape
         property string hwselected: ""
+        property string categorySelected: ""
+        
+        // Make sure to create both lists when the popup opens
+        onOpened: {
+            // Initialize the SwipeView if needed
+            if (hwswipeview.count < 2) {
+                // Make sure we already have the second view for device list
+                var secondView = subHwlist.createObject(hwswipeview)
+                hwswipeview.addItem(secondView)
+            }
+            
+            // Make sure we're showing the first view (categories)
+            hwswipeview.currentIndex = 0
+            hwTitleText.text = qsTr("Retro Gaming Handheld Device")
+        }
 
         // background of title
         Rectangle {
@@ -499,7 +516,8 @@ ApplicationWindow {
             width: parent.width
 
             Text {
-                text: qsTr("Raspberry Pi Device")
+                id: hwTitleText
+                text: qsTr("Retro Gaming Handheld Device")
                 horizontalAlignment: Text.AlignHCenter
                 anchors.fill: parent
                 anchors.topMargin: 10
@@ -528,6 +546,7 @@ ApplicationWindow {
                 }
             }
         }
+        
         // line under title
         Rectangle {
             id: hwpopup_title_separator
@@ -537,43 +556,134 @@ ApplicationWindow {
             height: 1
         }
 
-        ListView {
-            id: hwlist
-            clip: true
-            model: ListModel {
-                id: deviceModel
-                ListElement {
-                    name: qsTr("[ All ]")
-                    tags: "[]"
-                    icon: ""
-                    description: ""
-                    matching_type: "exclusive"
-                }
-            }
-            currentIndex: -1
-            delegate: hwdelegate
+        SwipeView {
             anchors.top: hwpopup_title_separator.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom
-            boundsBehavior: Flickable.StopAtBounds
-            ScrollBar.vertical: ScrollBar {
-                anchors.right: parent.right
-                width: 10
-                policy: hwlist.contentHeight > hwlist.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
+            id: hwswipeview
+            interactive: false
+            clip: true
+            // Add debug printing for SwipeView changes
+            onCurrentIndexChanged: {
+                console.log("SwipeView current index changed to: " + currentIndex)
             }
-            Keys.onSpacePressed: {
-                if (currentIndex != -1)
-                    selectHWitem(model.get(currentIndex))
+
+            ListView {
+                id: hwlist
+                clip: true
+                model: ListModel {
+                    id: categoryModel
+                    // Main categories will be loaded from JSON
+                }
+                currentIndex: -1
+                delegate: hwdelegate
+                boundsBehavior: Flickable.StopAtBounds
+                ScrollBar.vertical: ScrollBar {
+                    anchors.right: parent.right
+                    width: 10
+                    policy: hwlist.contentHeight > hwlist.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
+                }
+                Keys.onSpacePressed: {
+                    if (currentIndex != -1)
+                        selectHWcategory(model.get(currentIndex))
+                }
+                Accessible.onPressAction: {
+                    if (currentIndex != -1)
+                        selectHWcategory(model.get(currentIndex))
+                }
+                Keys.onEnterPressed: Keys.onSpacePressed(event)
+                Keys.onReturnPressed: Keys.onSpacePressed(event)
+                Keys.onRightPressed: {
+                    // Navigate into subcategories
+                    if (currentIndex != -1 && typeof model.get(currentIndex).subitems !== "undefined")
+                        selectHWcategory(model.get(currentIndex), true)
+                }
             }
-            Accessible.onPressAction: {
-                if (currentIndex != -1)
-                    selectHWitem(model.get(currentIndex))
+
+            // Add the initial device list view directly to ensure it exists
+            ListView {
+                id: initialDeviceList
+                clip: true
+                model: ListModel {
+                    ListElement {
+                        name: "Back"
+                        tags: "[]"
+                        icon: "icons/ic_chevron_left_40px.svg"
+                        description: "Go back to main menu"
+                    }
+                }
+                currentIndex: -1
+                delegate: hwdelegate
+                boundsBehavior: Flickable.StopAtBounds
+                ScrollBar.vertical: ScrollBar {
+                    width: 10
+                    policy: parent.contentHeight > parent.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
+                }
+                Keys.onSpacePressed: {
+                    if (currentIndex != -1)
+                        selectHWitem(model.get(currentIndex))
+                }
+                Accessible.onPressAction: {
+                    if (currentIndex != -1)
+                        selectHWitem(model.get(currentIndex))
+                }
+                Keys.onEnterPressed: Keys.onSpacePressed(event)
+                Keys.onReturnPressed: Keys.onSpacePressed(event)
+                Keys.onLeftPressed: {
+                    hwswipeview.decrementCurrentIndex()
+                    hwpopup.categorySelected = ""
+                    hwTitleText.text = qsTr("Retro Gaming Handheld Device")
+                }
             }
-            Keys.onEnterPressed: Keys.onSpacePressed(event)
-            Keys.onReturnPressed: Keys.onSpacePressed(event)
         }
     }
+
+    // Component for the device subcategory list
+    // We don't need this component definition anymore since we're creating the
+// ListView directly in the SwipeView. If you still have the component definition,
+// you can safely remove it or comment it out:
+
+/*
+Component {
+    id: subHwlist
+
+    ListView {
+        model: ListModel {
+            ListElement {
+                name: "Back"
+                tags: "[]"
+                icon: "icons/ic_chevron_left_40px.svg"
+                description: "Go back to main menu"
+            }
+        }
+
+        currentIndex: -1
+        delegate: hwdelegate
+
+        boundsBehavior: Flickable.StopAtBounds
+        ScrollBar.vertical: ScrollBar {
+            width: 10
+            policy: parent.contentHeight > parent.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
+        }
+        Keys.onSpacePressed: {
+            if (currentIndex != -1)
+                selectHWitem(model.get(currentIndex))
+        }
+        Accessible.onPressAction: {
+            if (currentIndex != -1)
+                selectHWitem(model.get(currentIndex))
+        }
+        Keys.onEnterPressed: Keys.onSpacePressed(event)
+        Keys.onReturnPressed: Keys.onSpacePressed(event)
+        Keys.onLeftPressed: {
+            hwswipeview.decrementCurrentIndex()
+            hwpopup.categorySelected = ""
+            hwTitleText.text = qsTr("Retro Gaming Handheld Device")
+        }
+    }
+}
+*/
 
     /*
       Popup for OS selection
@@ -743,13 +853,14 @@ ApplicationWindow {
         }
     }
 
+    // Hardware delegate component for displaying devices and categories
     Component {
         id: hwdelegate
 
         Item {
             width: window.width-100
             height: contentLayout.implicitHeight + 24
-            Accessible.name: name+".\n"+description
+            Accessible.name: name+".\n"+(typeof description === "undefined" ? "" : description)
 
             MouseArea {
                 id: hwMouseArea
@@ -758,27 +869,31 @@ ApplicationWindow {
                 hoverEnabled: true
 
                 onEntered: {
-                    bgrect.mouseOver = true
+                    bgrect3.mouseOver = true
                 }
 
                 onExited: {
-                    bgrect.mouseOver = false
+                    bgrect3.mouseOver = false
                 }
 
                 onClicked: {
-                    selectHWitem(model)
+                    if (typeof subitems !== "undefined" && subitems) {
+                        selectHWcategory(model)
+                    } else {
+                        selectHWitem(model)
+                    }
                 }
             }
 
             Rectangle {
-                id: bgrect
+                id: bgrect3
                 anchors.fill: parent
                 color: accentColor
                 visible: mouseOver && parent.ListView.view.currentIndex !== index
                 property bool mouseOver: false
             }
             Rectangle {
-                id: borderrect
+                id: borderrect2
                 implicitHeight: 1
                 implicitWidth: parent.width
                 color: accentColor
@@ -817,10 +932,20 @@ ApplicationWindow {
 
                     Text {
                         Layout.fillWidth: true
+                        text: typeof description === "undefined" ? "" : description
                         font.family: roboto.name
                         wrapMode: Text.WordWrap
                         color: accentColor
                     }
+                }
+                
+                // Show right chevron for categories with subitems
+                Image {
+                    source: "icons/ic_chevron_right_40px.svg"
+                    visible: typeof subitems !== "undefined" && subitems
+                    Layout.preferredHeight: 40
+                    Layout.preferredWidth: 40
+                    fillMode: Image.PreserveAspectFit
                 }
             }
         }
@@ -1553,54 +1678,118 @@ ApplicationWindow {
         }
     }
 
+    // Function to fetch OS list and populate the hardware categories
     function fetchOSlist() {
-        var oslist_json = imageWriter.getFilteredOSlist();
-        var o = JSON.parse(oslist_json)
-        var oslist_parsed = oslistFromJson(o)
-        if (oslist_parsed === false)
-            return
-        osmodel.clear()
-        for (var i in oslist_parsed) {
-            osmodel.append(oslist_parsed[i])
-        }
+        try {
+            var oslist_json = imageWriter.getFilteredOSlist();
+            var o = JSON.parse(oslist_json);
+            var oslist_parsed = oslistFromJson(o);
+            
+            if (oslist_parsed === false) {
+                return;
+            }
+            
+            osmodel.clear();
+            for (var i in oslist_parsed) {
+                osmodel.append(oslist_parsed[i]);
+            }
 
-        if ("imager" in o) {
-            var imager = o["imager"]
+            if ("imager" in o) {
+                var imager = o["imager"];
 
-            if ("devices" in imager)
-            {
-                deviceModel.clear()
-                var devices = imager["devices"]
-                for (var j in devices)
-                {
-                    devices[j]["tags"] = JSON.stringify(devices[j]["tags"])
-                    deviceModel.append(devices[j])
-                    if ("default" in devices[j] && devices[j]["default"])
-                    {
-                        hwlist.currentIndex = deviceModel.count-1
+                if ("devices" in imager) {
+                    // Clear the category model
+                    categoryModel.clear();
+                    
+                    // Add an "All" option at the top
+                    categoryModel.append({
+                        name: qsTr("[ All ]"),
+                        tags: "[]",
+                        icon: "",
+                        description: qsTr("Show firmware for all devices"),
+                        matching_type: "inclusive"
+                    });
+                    
+                    // Process device categories more safely
+                    var devices = imager["devices"];
+                    if (devices && Array.isArray(devices)) {
+                        for (var j = 0; j < devices.length; j++) {
+                            // Create a plain JavaScript object (not a complex QML type)
+                            var device = {
+                                name: devices[j].name || "",
+                                description: devices[j].description || "",
+                                icon: devices[j].icon || "",
+                                matching_type: devices[j].matching_type || ""
+                            };
+                            
+                            // Handle subitems properly
+                            if (devices[j].subitems && Array.isArray(devices[j].subitems)) {
+                                // Create a new array for subitems
+                                var subitems = [];
+                                
+                                for (var k = 0; k < devices[j].subitems.length; k++) {
+                                    var subitem = devices[j].subitems[k];
+                                    
+                                    // Create a plain object with only the properties we need
+                                    var newSubitem = {
+                                        name: subitem.name || "",
+                                        description: subitem.description || "",
+                                        icon: subitem.icon || "",
+                                        matching_type: subitem.matching_type || ""
+                                    };
+                                    
+                                    // Ensure tags is a properly formatted string
+                                    if (subitem.tags) {
+                                        if (typeof subitem.tags === "string") {
+                                            newSubitem.tags = subitem.tags;
+                                        } else if (Array.isArray(subitem.tags)) {
+                                            newSubitem.tags = JSON.stringify(subitem.tags);
+                                        } else {
+                                            newSubitem.tags = "[]";
+                                        }
+                                    } else {
+                                        newSubitem.tags = "[]";
+                                    }
+                                    
+                                    subitems.push(newSubitem);
+                                }
+                                
+                                // Add the subitems array
+                                device.subitems = subitems;
+                            }
+                            
+                            // Add the device category to the model
+                            categoryModel.append(device);
+                        }
+                    }
+                }
+
+                // Rest of your function remains unchanged
+                if (imageWriter.getBoolSetting("check_version") && "latest_version" in imager && "url" in imager) {
+                    if (!imageWriter.isEmbeddedMode() && imageWriter.isVersionNewer(imager["latest_version"])) {
+                        updatepopup.url = imager["url"];
+                        updatepopup.openPopup();
+                    }
+                }
+                
+                if ("default_os" in imager) {
+                    selectNamedOS(imager["default_os"], osmodel);
+                }
+                
+                if (imageWriter.isEmbeddedMode()) {
+                    if ("embedded_default_os" in imager) {
+                        selectNamedOS(imager["embedded_default_os"], osmodel);
+                    }
+                    if ("embedded_default_destination" in imager) {
+                        imageWriter.startDriveListPolling();
+                        setDefaultDest.drive = imager["embedded_default_destination"];
+                        setDefaultDest.start();
                     }
                 }
             }
-
-            if (imageWriter.getBoolSetting("check_version") && "latest_version" in imager && "url" in imager) {
-                if (!imageWriter.isEmbeddedMode() && imageWriter.isVersionNewer(imager["latest_version"])) {
-                    updatepopup.url = imager["url"]
-                    updatepopup.openPopup()
-                }
-            }
-            if ("default_os" in imager) {
-                selectNamedOS(imager["default_os"], osmodel)
-            }
-            if (imageWriter.isEmbeddedMode()) {
-                if ("embedded_default_os" in imager) {
-                    selectNamedOS(imager["embedded_default_os"], osmodel)
-                }
-                if ("embedded_default_destination" in imager) {
-                    imageWriter.startDriveListPolling()
-                    setDefaultDest.drive = imager["embedded_default_destination"]
-                    setDefaultDest.start()
-                }
-            }
+        } catch (e) {
+            console.error("Error in fetchOSlist:", e);
+            onError("Error loading device list: " + e.message);
         }
     }
 
@@ -1644,63 +1833,245 @@ ApplicationWindow {
         return m
     }
 
+    // Function to handle new category/subcategory hardware list
+    function newHwSublist() {
+        try {
+            // Make sure we have enough items in SwipeView
+            if (hwswipeview.count <= hwswipeview.currentIndex + 1) {
+                var newlist = subHwlist.createObject(hwswipeview);
+                if (!newlist) {
+                    console.error("Failed to create subHwlist component");
+                    return null;
+                }
+                hwswipeview.addItem(newlist);
+            }
+            
+            var nextView = hwswipeview.itemAt(hwswipeview.currentIndex + 1);
+            if (!nextView) {
+                console.error("Failed to get next view in SwipeView");
+                return null;
+            }
+            
+            var m = nextView.model;
+            if (!m) {
+                console.error("Next view does not have a model");
+                return null;
+            }
+            
+            // Clear existing items except for the first one (Back button)
+            if (m.count > 1) {
+                m.remove(1, m.count - 1);
+            }
+            
+            return m;
+        } catch (e) {
+            console.error("Error in newHwSublist:", e);
+            return null;
+        }
+    }
+
+    // Function to select a hardware category (parent item with subitems)
+    function selectHWcategory(hwmodel, navigateOnly) {
+        try {
+            // Add defensive checks
+            if (!hwmodel) {
+                console.error("selectHWcategory called with null model");
+                return;
+            }
+
+            if (hwmodel.name === qsTr("Back")) {
+                hwswipeview.decrementCurrentIndex();
+                hwpopup.categorySelected = "";
+                hwTitleText.text = qsTr("Retro Gaming Handheld Device");
+                return;
+            }
+
+            // Update the title to show current category
+            hwTitleText.text = hwmodel.name;
+            hwpopup.categorySelected = hwmodel.name;
+            
+            // Make sure we have a SwipeView with at least two items
+            if (hwswipeview.count < 2) {
+                // Create a new sublist view if needed
+                var newlist = subHwlist.createObject(hwswipeview);
+                if (!newlist) {
+                    console.error("Failed to create new subHwlist");
+                    return;
+                }
+                hwswipeview.addItem(newlist);
+            }
+            
+            // Get the model of the next view
+            var nextView = hwswipeview.itemAt(hwswipeview.currentIndex + 1);
+            if (!nextView) {
+                console.error("Failed to get next view in SwipeView");
+                return;
+            }
+            
+            var m = nextView.model;
+            if (!m) {
+                console.error("Next view does not have a model");
+                return;
+            }
+            
+            // Clear all items except the first one (Back button)
+            if (m.count > 1) {
+                m.remove(1, m.count - 1);
+            }
+            
+            // Parse subitems if they exist - use a safer approach
+            if (typeof hwmodel.subitems !== "undefined" && hwmodel.subitems) {
+                var subitems = hwmodel.subitems;
+                
+                console.log("Processing subitems for: " + hwmodel.name);
+                console.log("Subitems type: " + typeof subitems);
+                
+                // Make sure subitems is iterable
+                if (Array.isArray(subitems)) {
+                    console.log("Subitems count: " + subitems.length);
+                    
+                    for (var i = 0; i < subitems.length; i++) {
+                        console.log("Processing subitem: " + i + " - " + (subitems[i].name || "unnamed"));
+                        
+                        // Create a simple object with just the properties we need
+                        var item = {
+                            name: subitems[i].name || "",
+                            description: subitems[i].description || "",
+                            icon: subitems[i].icon || "",
+                            matching_type: subitems[i].matching_type || ""
+                        };
+                        
+                        // Handle tags appropriately
+                        if (typeof subitems[i].tags === "string") {
+                            item.tags = subitems[i].tags;
+                        } else if (Array.isArray(subitems[i].tags)) {
+                            item.tags = JSON.stringify(subitems[i].tags);
+                        } else {
+                            item.tags = "[]";
+                        }
+                        
+                        m.append(item);
+                    }
+                    
+                    // Now explicitly increment the SwipeView index to show the device list
+                    console.log("Setting next view current index to 0");
+                    nextView.currentIndex = 0;
+                    
+                    console.log("Incrementing SwipeView from index: " + hwswipeview.currentIndex);
+                    hwswipeview.incrementCurrentIndex();
+                    console.log("New SwipeView index: " + hwswipeview.currentIndex);
+                } else {
+                    console.error("subitems is not an array: " + typeof subitems);
+                }
+            } else {
+                console.log("No subitems found for: " + hwmodel.name);
+                
+                // If it's not a navigation-only action and has no subitems, select the item
+                if (!navigateOnly) {
+                    selectHWitem(hwmodel);
+                }
+            }
+        } catch (e) {
+            console.error("Error in selectHWcategory:", e);
+            onError("Error navigating hardware categories: " + e.message);
+        }
+    }
+
     function selectHWitem(hwmodel) {
-        /* Default is exclusive matching */
-        var inclusive = false
-
-        if (hwmodel.matching_type) {
-            switch (hwmodel.matching_type) {
-            case "exclusive":
-                break;
-            case "inclusive":
-                inclusive = true
-                break;
+        try {
+            // Add defensive checks
+            if (!hwmodel) {
+                console.error("selectHWitem called with null model");
+                return;
             }
-        }
 
-        imageWriter.setHWFilterList(hwmodel.tags, inclusive)
-
-        /* Reload list */
-        var oslist_json = imageWriter.getFilteredOSlist();
-        var o = JSON.parse(oslist_json)
-        var oslist_parsed = oslistFromJson(o)
-        if (oslist_parsed === false)
-            return
-
-        /* As we're filtering the OS list, we need to ensure we present a 'Recommended' OS.
-            * To do this, we exploit a convention of how we build the OS list. By convention,
-            * the preferred OS for a device is listed at the top level of the list, and is at the
-            * lowest index. So..
-            */
-        if (oslist_parsed.length != 0) {
-            var candidate = oslist_parsed[0]
-
-            if ("description" in candidate &&
-                !("subitems" in candidate) &&
-                !candidate["description"].includes("(Recommended)")
-                )
-            {
-                candidate["description"] += " (Recommended)"
+            if (hwmodel.name === qsTr("Back")) {
+                hwswipeview.decrementCurrentIndex();
+                hwTitleText.text = qsTr("Retro Gaming Handheld Device");
+                hwpopup.categorySelected = "";
+                return;
             }
+
+            // Default is exclusive matching
+            var inclusive = false;
+
+            if (hwmodel.matching_type) {
+                switch (hwmodel.matching_type) {
+                case "exclusive":
+                    break;
+                case "inclusive":
+                    inclusive = true;
+                    break;
+                }
+            }
+
+            // Handle tags with extra care
+            var tags = [];
+            
+            try {
+                if (typeof hwmodel.tags === "string") {
+                    if (hwmodel.tags === "[]" || hwmodel.tags === "") {
+                        // Empty tags array
+                        tags = [];
+                    } else {
+                        // Parse JSON string
+                        tags = JSON.parse(hwmodel.tags);
+                    }
+                } else if (Array.isArray(hwmodel.tags)) {
+                    // Direct array
+                    tags = hwmodel.tags;
+                } else if (hwmodel.tags) {
+                    // Some other value, convert to string and try to parse
+                    tags = JSON.parse(String(hwmodel.tags));
+                }
+            } catch (e) {
+                console.error("Error parsing tags:", e);
+                tags = [];
+            }
+
+            // Call the filtering function with the parsed tags
+            console.log("Setting HW filter with tags:", JSON.stringify(tags));
+            imageWriter.setHWFilterList(tags, inclusive);
+
+            // Reload list
+            var oslist_json = imageWriter.getFilteredOSlist();
+            var o = JSON.parse(oslist_json);
+            var oslist_parsed = oslistFromJson(o);
+            
+            if (oslist_parsed === false) {
+                return;
+            }
+
+            if (oslist_parsed.length != 0) {
+                var candidate = oslist_parsed[0];
+
+                if ("description" in candidate &&
+                    !("subitems" in candidate) &&
+                    !candidate["description"].includes("(Recommended)")
+                    )
+                {
+                    candidate["description"] += " (Recommended)";
+                }
+            }
+
+            osmodel.clear();
+            for (var i in oslist_parsed) {
+                osmodel.append(oslist_parsed[i]);
+            }
+
+            // When the HW device is changed, reset the OS selection
+            oslist.currentIndex = -1;
+            osswipeview.currentIndex = 0;
+            imageWriter.setSrc("");
+            osbutton.text = qsTr("CHOOSE CFW");
+            writebutton.enabled = false;
+
+            hwbutton.text = hwmodel.name;
+            hwpopup.close();
+        } catch (e) {
+            console.error("Error in selectHWitem:", e);
+            onError("Error selecting hardware item: " + e.message);
         }
-
-        osmodel.clear()
-        for (var i in oslist_parsed) {
-            osmodel.append(oslist_parsed[i])
-        }
-
-        // When the HW device is changed, reset the OS selection otherwise
-        // you get a weird effect with the selection moving around in the list
-        // when the user next opens the OS list, and the user could still have
-        // an OS selected which isn't compatible with this HW device
-        oslist.currentIndex = -1
-        osswipeview.currentIndex = 0
-        imageWriter.setSrc("")
-        osbutton.text = qsTr("CHOOSE CFW")
-        writebutton.enabled = false
-
-        hwbutton.text = hwmodel.name
-        hwpopup.close()
     }
 
     /// Is the item a sub-list or sub-sub-list in the OS selection model?
@@ -1750,7 +2121,7 @@ ApplicationWindow {
             {
                 console.log("Failure: Backend should have pre-flattened the JSON!");
 
-                osswipeview.itemAt(osswipeview.currentIndex+1).currentIndex = (selectFirstSubitem === true) ? 0 : -1
+                osswipeview.itemAt(osswipeview.currentIndex+1).currentIndex = (selectFirstSubitem ===true) ? 0 : -1
                 osswipeview.incrementCurrentIndex()
             }
         } else if (d.url === "") {

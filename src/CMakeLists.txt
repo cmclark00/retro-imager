@@ -10,7 +10,7 @@ set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE STRING "Which macOS architectur
 
 project(retro-imager LANGUAGES CXX C)
 set(IMAGER_VERSION_MAJOR 0)
-set(IMAGER_VERSION_MINOR 3)
+set(IMAGER_VERSION_MINOR 5)
 set(IMAGER_VERSION_PATCH 0)
 set(IMAGER_VERSION_STR "${IMAGER_VERSION_MAJOR}.${IMAGER_VERSION_MINOR}.${IMAGER_VERSION_PATCH}")
 set(IMAGER_VERSION_CSV "${IMAGER_VERSION_MAJOR},${IMAGER_VERSION_MINOR},${IMAGER_VERSION_PATCH},0")
@@ -21,10 +21,10 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 #add_link_options("-fsanitize=address")
 
 # You _must_ set your Qt6 root for the build to progress.
-set(Qt6_ROOT "/opt/Qt/6.7.2/gcc_arm64" CACHE PATH "Your Qt6 root path")
+set(Qt6_ROOT "$ENV{QT6_ROOT}" CACHE PATH "Your Qt6 root path")
 
 if (WIN32)
-    set(MINGW64_ROOT "" CACHE PATH "Your MinGW64 root path, likely provided by QtCreator")
+    set(MINGW64_ROOT "$ENV{MINGW64_ROOT}" CACHE PATH "Your MinGW64 root path, likely provided by QtCreator")
 endif()
 
 if (APPLE)
