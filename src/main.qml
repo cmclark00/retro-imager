@@ -640,50 +640,43 @@ ApplicationWindow {
     }
 
     // Component for the device subcategory list
-    // We don't need this component definition anymore since we're creating the
-// ListView directly in the SwipeView. If you still have the component definition,
-// you can safely remove it or comment it out:
+    Component {
+        id: subHwlist
 
-/*
-Component {
-    id: subHwlist
-
-    ListView {
-        model: ListModel {
-            ListElement {
-                name: "Back"
-                tags: "[]"
-                icon: "icons/ic_chevron_left_40px.svg"
-                description: "Go back to main menu"
+        ListView {
+            clip: true
+            model: ListModel {
+                ListElement {
+                    name: "Back"
+                    tags: "[]"
+                    icon: "icons/ic_chevron_left_40px.svg"
+                    description: "Go back to main menu"
+                }
+            }
+            currentIndex: -1
+            delegate: hwdelegate
+            boundsBehavior: Flickable.StopAtBounds
+            ScrollBar.vertical: ScrollBar {
+                width: 10
+                policy: parent.contentHeight > parent.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
+            }
+            Keys.onSpacePressed: {
+                if (currentIndex != -1)
+                    selectHWitem(model.get(currentIndex))
+            }
+            Accessible.onPressAction: {
+                if (currentIndex != -1)
+                    selectHWitem(model.get(currentIndex))
+            }
+            Keys.onEnterPressed: Keys.onSpacePressed(event)
+            Keys.onReturnPressed: Keys.onSpacePressed(event)
+            Keys.onLeftPressed: {
+                hwswipeview.decrementCurrentIndex()
+                hwpopup.categorySelected = ""
+                hwTitleText.text = qsTr("Retro Gaming Handheld Device")
             }
         }
-
-        currentIndex: -1
-        delegate: hwdelegate
-
-        boundsBehavior: Flickable.StopAtBounds
-        ScrollBar.vertical: ScrollBar {
-            width: 10
-            policy: parent.contentHeight > parent.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
-        }
-        Keys.onSpacePressed: {
-            if (currentIndex != -1)
-                selectHWitem(model.get(currentIndex))
-        }
-        Accessible.onPressAction: {
-            if (currentIndex != -1)
-                selectHWitem(model.get(currentIndex))
-        }
-        Keys.onEnterPressed: Keys.onSpacePressed(event)
-        Keys.onReturnPressed: Keys.onSpacePressed(event)
-        Keys.onLeftPressed: {
-            hwswipeview.decrementCurrentIndex()
-            hwpopup.categorySelected = ""
-            hwTitleText.text = qsTr("Retro Gaming Handheld Device")
-        }
     }
-}
-*/
 
     /*
       Popup for OS selection
@@ -1926,7 +1919,26 @@ Component {
                 console.log("Processing subitems for: " + hwmodel.name);
                 console.log("Subitems type: " + typeof subitems);
                 
-                // Make sure subitems is iterable
+                // Check if we need to convert an object to an array
+                if (!Array.isArray(subitems) && typeof subitems === "object") {
+                    console.log("Converting object to array");
+                    var subitemsArray = [];
+                    for (var key in subitems) {
+                        if (subitems.hasOwnProperty(key)) {
+                            var subitem = subitems[key];
+                            // Make sure each item has a name property
+                            if (typeof subitem === "object") {
+                                if (!subitem.name && key) {
+                                    subitem.name = key;
+                                }
+                                subitemsArray.push(subitem);
+                            }
+                        }
+                    }
+                    subitems = subitemsArray;
+                }
+                
+                // Make sure subitems is an array before iterating
                 if (Array.isArray(subitems)) {
                     console.log("Subitems count: " + subitems.length);
                     
@@ -1961,7 +1973,8 @@ Component {
                     hwswipeview.incrementCurrentIndex();
                     console.log("New SwipeView index: " + hwswipeview.currentIndex);
                 } else {
-                    console.error("subitems is not an array: " + typeof subitems);
+                    console.error("Subitems is not an array or object: " + typeof subitems);
+                    onError("Error: Invalid subitems format");
                 }
             } else {
                 console.log("No subitems found for: " + hwmodel.name);
@@ -2096,6 +2109,29 @@ Component {
         if (typeof(d.subitems_json) == "string" && d.subitems_json !== "") {
             var m = newSublist()
             var subitems = JSON.parse(d.subitems_json)
+            
+            // Handle the case when subitems is an object instead of an array
+            if (!Array.isArray(subitems) && typeof subitems === "object") {
+                console.log("Converting object to array from subitems_json");
+                
+                // Create an array from the object properties
+                var subitemsArray = [];
+                for (var key in subitems) {
+                    if (subitems.hasOwnProperty(key)) {
+                        var subitem = subitems[key];
+                        // Make sure each item has a name property
+                        if (typeof subitem === "object") {
+                            if (!subitem.name && key) {
+                                subitem.name = key;
+                            }
+                            subitemsArray.push(subitem);
+                        }
+                    }
+                }
+                
+                console.log("Converted to array with " + subitemsArray.length + " items");
+                subitems = subitemsArray;
+            }
 
             for (var i in subitems)
             {

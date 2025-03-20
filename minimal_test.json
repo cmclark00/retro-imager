@@ -1,0 +1,16 @@
+{
+  "os_list": [
+    {
+      "name": "Test OS 1",
+      "description": "A test OS for verifying functionality",
+      "icon": "icons/erase.png",
+      "url": "internal://format"
+    },
+    {
+      "name": "Test OS 2",
+      "description": "Another test OS",
+      "icon": "icons/erase.png",
+      "url": "internal://format"
+    }
+  ]
+} 

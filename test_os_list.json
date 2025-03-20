@@ -1,0 +1,37 @@
+{
+  "os_list": [
+    {
+      "name": "Test OS 1",
+      "description": "A test OS for verifying functionality",
+      "icon": "icons/erase.png",
+      "url": "internal://format",
+      "devices": ["rg40xxh"]
+    },
+    {
+      "name": "Test OS 2",
+      "description": "Another test OS",
+      "icon": "icons/erase.png",
+      "url": "internal://format",
+      "devices": ["rg35xx_plus"]
+    }
+  ],
+  "imager": {
+    "devices": [
+      {
+        "name": "Test Device Category",
+        "subitems": [
+          {
+            "name": "Test Device 1",
+            "tags": ["rg40xxh"],
+            "icon": "icons/erase.png"
+          },
+          {
+            "name": "Test Device 2",
+            "tags": ["rg35xx_plus"],
+            "icon": "icons/erase.png"
+          }
+        ]
+      }
+    ]
+  }
+} 
